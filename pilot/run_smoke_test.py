@@ -87,7 +87,12 @@ def run(items, generate, output, model_id, seed, constrained=False, *, arms=ARMS
                 "panel_decision": None,
             }
             try:
-                record["response"] = generate(prompt)
+                result = generate(prompt)
+                if isinstance(result, tuple):
+                    record["response"], metadata = result
+                    record.update(metadata)
+                else:
+                    record["response"] = result
             except (RuntimeError, ValueError) as error:
                 record["status"] = "model_error"
                 record["error"] = str(error)
