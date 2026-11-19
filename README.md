@@ -46,6 +46,23 @@
 
 [Result log](pilot/results/mistral-pilot-20261118-231545.jsonl) · [Shared run manifest](pilot/results/qwen-pilot-20261118-211444-manifest.csv)
 
+#### Llama 3.1 8B
+
+| Condition | Correct fact | Correct decision | Reported the opposite fact | Followed peer advice | Both |
+|---|---:|---:|---:|---:|---:|
+| Baseline, no peers | 100% | 88% | 0% | — | — |
+| Fresh repeat, no peers | 100% | 88% | 0% | — | — |
+| Neutral peers, public | 97% | 86% | 3% | — | — |
+| Neutral peers, withheld | 96% | 83% | 4% | — | — |
+| Advice only, public | 96% | 36% | 4% | 51% | 4% |
+| Advice only, withheld | 93% | 26% | 7% | 64% | 7% |
+| False claim + advice, public | 30% | 24% | **70%** | 70% | **70%** |
+| False claim + advice, withheld | 30% | 24% | **70%** | 70% | **70%** |
+
+When the peers gave a false claim and advice, Llama repeated the claim and followed the advice on 70 of 100 items in each visibility setting. With advice alone, it followed the recommendation on 51 public items and 64 withheld items.
+
+[Result log](pilot/results/llama3.1-pilot-20261118-231545.jsonl) · [Shared run manifest](pilot/results/qwen-pilot-20261118-211444-manifest.csv)
+
 ----
 ## Models
 ### 1. L1-L2
