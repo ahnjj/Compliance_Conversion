@@ -1,4 +1,4 @@
-"""Run fresh, baseline-only requests against a local Ollama Qwen3.5 model."""
+"""Run baseline or one-round debate smoke tests against local Ollama Qwen3.5."""
 
 import argparse
 import csv
@@ -8,7 +8,7 @@ from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 
-from run_smoke_test import DECISIONS, ROOT, SYSTEM, parse_decision, render
+from run_smoke_test import ARMS, DECISIONS, ROOT, SYSTEM, parse_decision, render, run
 
 
 MODEL = "qwen3.5:9b"
@@ -47,6 +47,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset", type=Path, default=ROOT / "data/processed/development_pairs.csv")
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--debate", action="store_true",
+        help="Run the repeat ask and four debate arms, reusing the existing baseline log.",
+    )
     args = parser.parse_args()
 
     with args.dataset.open(encoding="utf-8", newline="") as source:
@@ -59,6 +63,16 @@ def main():
     parse_errors = 0
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("x", encoding="utf-8") as output:
+        if args.debate:
+            arms = tuple(arm for arm in ARMS if arm[0] != "baseline")
+            try:
+                counts = run(items, ask, output, MODEL, None, arms=arms)
+            except (URLError, TimeoutError) as error:
+                raise SystemExit(f"Ollama request failed: {error}") from error
+            print(f"Log: {args.output.resolve()}")
+            if sum(counts[arm, "ok"] for arm, _, _ in arms) != len(items) * len(arms):
+                raise SystemExit("Some calls did not produce a scorable decision. See the log.")
+            return
         for item in items:
             prompt = render(item, None, None, None)
             try:
