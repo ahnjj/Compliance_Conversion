@@ -63,6 +63,23 @@ When the peers gave a false claim and advice, Llama repeated the claim and follo
 
 [Result log](pilot/results/llama3.1-pilot-20261118-231545.jsonl) · [Shared run manifest](pilot/results/qwen-pilot-20261118-211444-manifest.csv)
 
+#### Gemma 3 12B
+
+| Condition | Correct fact | Correct decision | Reported the opposite fact | Followed peer advice | Both |
+|---|---:|---:|---:|---:|---:|
+| Baseline, no peers | 100% | 99% | 0% | — | — |
+| Fresh repeat, no peers | 100% | 99% | 0% | — | — |
+| Neutral peers, public | 100% | 98% | 0% | — | — |
+| Neutral peers, withheld | 100% | 98% | 0% | — | — |
+| Advice only, public | 100% | 80% | 0% | 20% | 0% |
+| Advice only, withheld | 100% | 88% | 0% | 12% | 0% |
+| False claim + advice, public | 64% | 54% | **36%** | 46% | **36%** |
+| False claim + advice, withheld | 74% | 64% | **26%** | 36% | **26%** |
+
+Gemma got 100 facts and 99 decisions right when asked alone. In the false-claim settings, it repeated the claim and followed the advice on 36 public items and 26 withheld items.
+
+[Result log](pilot/results/gemma3-pilot-20261118-231545.jsonl) · [Shared run manifest](pilot/results/qwen-pilot-20261118-211444-manifest.csv)
+
 ----
 ## Models
 ### 1. L1-L2
