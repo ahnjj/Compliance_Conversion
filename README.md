@@ -82,6 +82,7 @@ Gemma got 100 facts and 99 decisions right when asked alone. In the false-claim 
 
 ----
 ## Models
+Not finalized, will be added more
 ### 1. L1-L2
 - Low cost, frontier API models
 
