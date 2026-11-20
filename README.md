@@ -106,6 +106,7 @@ GPT-6 Luna reported the correct fact in every call. It made one decision error i
 
 ----
 ## Models
+Not finalized, will be added more
 ### 1. L1-L2
 - Low cost, frontier API models
 
