@@ -41,6 +41,7 @@ def post_json(url, payload, headers=None):
 
 class OllamaAdapter:
     backend = "ollama"
+    output_mode = "json_schema"
     default_model = "qwen3.5:9b"
     supported_models = (
         default_model,
@@ -80,22 +81,36 @@ class OllamaAdapter:
 
 
 class ChatCompletionsAdapter:
+    output_mode = "json_schema"
+
     def __init__(self, api_key):
         self.api_key = api_key
 
     def generate(self, messages, schema):
+        response_format = {
+            "type": "json_schema",
+            "json_schema": {"name": "policy_decision", "strict": True, "schema": schema},
+        }
+        if self.output_mode == "json_object":
+            response_format = {"type": "json_object"}
+            example = {name: f"<{name} value>" for name in schema["required"]}
+            instruction = (
+                "\nUse this JSON object shape. Replace each placeholder with an allowed value: "
+                + json.dumps(example)
+            )
+            messages = [
+                {**message, "content": message["content"] + instruction}
+                if message["role"] == "system" else message
+                for message in messages
+            ]
         body = post_json(
             self.endpoint,
             {
                 "model": self.model_id,
                 "messages": messages,
                 "stream": False,
-                "reasoning_effort": "none",
                 **self.request_options,
-                "response_format": {
-                    "type": "json_schema",
-                    "json_schema": {"name": "policy_decision", "strict": True, "schema": schema},
-                },
+                "response_format": response_format,
             },
             {"Authorization": f"Bearer {self.api_key}"},
         )
@@ -118,11 +133,56 @@ class UpstageAdapter(ChatCompletionsAdapter):
     backend = "upstage"
     model_id = "solar-mini4"
     endpoint = "https://api.upstage.ai/v1/chat/completions"
-    request_options = {"temperature": 0, "max_tokens": 128}
+    request_options = {"reasoning_effort": "none", "temperature": 0, "max_tokens": 128}
 
 
 class OpenAIAdapter(ChatCompletionsAdapter):
     backend = "openai"
     model_id = "gpt-6-luna"
     endpoint = "https://api.openai.com/v1/chat/completions"
-    request_options = {"max_completion_tokens": 128, "store": False}
+    request_options = {"reasoning_effort": "none", "max_completion_tokens": 128, "store": False}
+
+
+class DeepSeekAdapter(ChatCompletionsAdapter):
+    backend = "deepseek"
+    model_id = "deepseek-flash"
+    endpoint = "https://api.deepseek.com/chat/completions"
+    output_mode = "json_object"
+    request_options = {"thinking": {"type": "disabled"}, "temperature": 0, "max_tokens": 128}
+
+
+class AnthropicAdapter:
+    backend = "anthropic"
+    model_id = "claude-haiku-5-5"
+    output_mode = "json_schema"
+
+    def __init__(self, api_key):
+        self.api_key = api_key
+
+    def generate(self, messages, schema):
+        body = post_json(
+            "https://api.anthropic.com/v1/messages",
+            {
+                "model": self.model_id,
+                "system": "\n\n".join(m["content"] for m in messages if m["role"] == "system"),
+                "messages": [m for m in messages if m["role"] != "system"],
+                "max_tokens": 128,
+                "stream": False,
+                "thinking": {"type": "disabled"},
+                "output_config": {"format": {"type": "json_schema", "schema": schema}},
+            },
+            {"Authorization": f"Bearer {self.api_key}", "anthropic-version": "2026-10-21"},
+        )
+        try:
+            content = body["content"]
+            if not isinstance(content, list):
+                raise TypeError("Expected content blocks.")
+            text = "".join(block["text"] for block in content if block["type"] == "text")
+        except (KeyError, TypeError) as error:
+            raise ModelRequestError("Anthropic returned an invalid message response.") from error
+        return ModelResponse(text, {
+            "served_model_id": body.get("model"),
+            "finish_reason": body.get("stop_reason"),
+            "usage": body.get("usage"),
+            "request_id": body.get("id"),
+        })

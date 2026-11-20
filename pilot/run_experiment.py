@@ -8,13 +8,22 @@ import shlex
 from collections import Counter
 from pathlib import Path
 
-from model_adapters import ModelRequestError, OllamaAdapter, OpenAIAdapter, UpstageAdapter
+from model_adapters import (
+    AnthropicAdapter,
+    DeepSeekAdapter,
+    ModelRequestError,
+    OllamaAdapter,
+    OpenAIAdapter,
+    UpstageAdapter,
+)
 from run_smoke_test import ARMS, DECISIONS, ROOT, SYSTEM, parse_decision, render, run
 
 
 API_BACKENDS = {
     "upstage": (UpstageAdapter, "UPSTAGE_API_KEY"),
     "openai": (OpenAIAdapter, "OPENAI_API_KEY"),
+    "deepseek": (DeepSeekAdapter, "DEEPSEEK_API_KEY"),
+    "anthropic": (AnthropicAdapter, "ANTHROPIC_API_KEY"),
 }
 
 
@@ -150,7 +159,6 @@ def run_facts(items, generate, output, debate, model_info, rounds=1):
                 **model_info,
                 **response.metadata,
                 "thinking": False,
-                "output_mode": "json_schema",
                 "response": raw,
                 "gold_fact": item["gold_fact"],
                 "case_fact": fact,
@@ -219,7 +227,11 @@ def main():
         adapter = adapter_type(api_key)
     else:
         adapter = OllamaAdapter(args.model or OllamaAdapter.default_model)
-    model_info = {"backend": adapter.backend, "model_id": adapter.model_id}
+    model_info = {
+        "backend": adapter.backend,
+        "model_id": adapter.model_id,
+        "output_mode": adapter.output_mode,
+    }
 
     def generate(prompt, fact_options=None):
         return adapter.generate(*build_request(prompt, fact_options))
@@ -277,7 +289,6 @@ def main():
                 **model_info,
                 **response.metadata,
                 "thinking": False,
-                "output_mode": "json_schema",
                 "gold_decision": gold,
                 "decision": decision,
                 "correct": decision == gold if decision else None,
