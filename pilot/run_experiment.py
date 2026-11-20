@@ -8,6 +8,7 @@ import shlex
 from collections import Counter
 from pathlib import Path
 
+from benchmark_tasks import BENCHMARKS, prepare_benchmark_items, run_benchmark
 from model_adapters import (
     AnthropicAdapter,
     DeepSeekAdapter,
@@ -198,22 +199,27 @@ def write_model_error(output, item, trial, model_info, error):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dataset", type=Path, default=ROOT / "data/processed/development_pairs.csv")
+    parser.add_argument("--dataset", type=Path, help="Override the default dataset or benchmark manifest.")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--backend", choices=("ollama", *API_BACKENDS), default="ollama")
     parser.add_argument(
         "--model", choices=OllamaAdapter.supported_models,
         help=f"Ollama model tag. Defaults to {OllamaAdapter.default_model}.",
     )
-    parser.add_argument("--score-fact", action="store_true", help="Score case_fact alongside decision.")
+    task = parser.add_mutually_exclusive_group()
+    task.add_argument("--score-fact", action="store_true", help="Score case_fact alongside decision.")
+    task.add_argument("--benchmark", choices=BENCHMARKS, help="Run the prepared benchmark manifest.")
+    parser.add_argument("--item-id", help="Run one item from the chosen benchmark manifest.")
     parser.add_argument(
         "--debate", action="store_true",
-        help="Run the debate smoke test. With --score-fact, also run a comparable baseline.",
+        help="Run the debate conditions. Fact-scored and benchmark runs also include a baseline.",
     )
-    parser.add_argument("--rounds", type=int, default=1, help="Rounds per fact-scored debate arm.")
+    parser.add_argument("--rounds", type=int, default=1, help="Rounds per fact-scored or benchmark debate arm.")
     args = parser.parse_args()
-    if args.rounds < 1 or (args.rounds != 1 and not (args.score_fact and args.debate)):
-        parser.error("Use a positive --rounds value. Multiple rounds require --score-fact --debate.")
+    if args.rounds < 1 or (args.rounds != 1 and not (args.debate and (args.score_fact or args.benchmark))):
+        parser.error("Use a positive --rounds value. Multiple rounds require --debate with --score-fact or --benchmark.")
+    if args.item_id and not args.benchmark:
+        parser.error("--item-id requires --benchmark.")
     if args.model and args.backend != "ollama":
         parser.error("--model is available only with --backend ollama.")
     if args.backend in API_BACKENDS:
@@ -240,10 +246,26 @@ def main():
         response = generate(prompt)
         return response.text, {**model_info, **response.metadata}
 
-    with args.dataset.open(encoding="utf-8", newline="") as source:
-        items = list(csv.DictReader(source))
+    dataset = args.dataset
+    if dataset is None:
+        dataset = ROOT / (f"pilot/{args.benchmark}_pilot.csv" if args.benchmark
+                          else "data/processed/development_pairs.csv")
+    try:
+        with dataset.open(encoding="utf-8-sig", newline="") as source:
+            items = list(csv.DictReader(source))
+    except OSError as error:
+        parser.error(str(error))
     if not items:
         parser.error("The dataset has no items.")
+    if args.benchmark:
+        if args.item_id:
+            items = [item for item in items if item.get("item_id") == args.item_id]
+            if len(items) != 1:
+                parser.error(f"Expected one item with ID {args.item_id} in {dataset}.")
+        try:
+            items = prepare_benchmark_items(args.benchmark, items)
+        except (OSError, KeyError, TypeError, ValueError) as error:
+            parser.error(f"Invalid benchmark manifest: {error}")
     if args.score_fact:
         for item in items:
             options = item.get("fact_options", "").split("|")
@@ -259,6 +281,12 @@ def main():
     parse_errors = 0
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("x", encoding="utf-8") as output:
+        if args.benchmark:
+            complete = run_benchmark(args.benchmark, items, adapter, output, args.debate, model_info, args.rounds)
+            print(f"Log: {args.output.resolve()}")
+            if not complete:
+                raise SystemExit("Some benchmark calls did not produce a scorable label. See the log.")
+            return
         if args.score_fact:
             parse_errors = run_facts(items, generate, output, args.debate, model_info, args.rounds)
             print(f"Log: {args.output.resolve()}")
