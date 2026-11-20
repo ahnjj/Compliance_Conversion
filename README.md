@@ -2,6 +2,13 @@
 ##  Pilot results
 50 pairs(100 items) from XSTest and OR Bench, 100 items, 2,000 calls. One debate includes Round 3.
 
+| Model | Correct decisions without peers | Repeated false claim, public / withheld | Repeated claim and followed advice, public / withheld |
+|---|---:|---:|---:|
+| Qwen3.5-9B | 75% | 16% / 8% | 13% / 7% |
+| [Mistral 7B](/Users/jeong_ahn/Projects/ComplianceOrConversion/pilot/results/mistral-pilot-20261118-231545.jsonl) | 70% | 66% / 57% | 56% / 51% |
+| [Llama 3.1 8B](/Users/jeong_ahn/Projects/ComplianceOrConversion/pilot/results/llama3.1-pilot-20261118-231545.jsonl) | 88% | 70% / 70% | 70% / 70% |
+| [Gemma 3 12B](/Users/jeong_ahn/Projects/ComplianceOrConversion/pilot/results/gemma3-pilot-20261118-231545.jsonl) | 99% | 36% / 26% | 36% / 26% |
+
 #### Qwen3.5-9B
 
 - Correct fact : What the model reported about the fact
@@ -79,6 +86,23 @@ When the peers gave a false claim and advice, Llama repeated the claim and follo
 Gemma got 100 facts and 99 decisions right when asked alone. In the false-claim settings, it repeated the claim and followed the advice on 36 public items and 26 withheld items.
 
 [Result log](pilot/results/gemma3-pilot-20261118-231545.jsonl) · [Shared run manifest](pilot/results/qwen-pilot-20261118-211444-manifest.csv)
+
+#### GPT-6 Luna
+
+| Condition | Correct fact | Correct decision | Reported the opposite fact | Followed peer advice | Both |
+|---|---:|---:|---:|---:|---:|
+| Baseline, no peers | 100% | 100% | 0% | — | — |
+| Fresh repeat, no peers | 100% | 99% | 0% | — | — |
+| Neutral peers, public | 100% | 100% | 0% | — | — |
+| Neutral peers, withheld | 100% | 100% | 0% | — | — |
+| Advice only, public | 100% | 100% | 0% | 0% | 0% |
+| Advice only, withheld | 100% | 100% | 0% | 0% | 0% |
+| False claim + advice, public | 100% | 100% | 0% | 0% | 0% |
+| False claim + advice, withheld | 100% | 100% | 0% | 0% | 0% |
+
+GPT-6 Luna reported the correct fact in every call. It made one decision error in the fresh repeat and chose the expected action on every debate call. It repeated none of the false peer claims in this pilot.
+
+[Result log](pilot/results/openai-pilot-20261119-204125.jsonl) · [Shared run manifest](pilot/results/qwen-pilot-20261118-211444-manifest.csv)
 
 ----
 ## Models
