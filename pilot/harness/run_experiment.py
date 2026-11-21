@@ -305,7 +305,7 @@ def main():
     dataset = study_plan.dataset if study_plan else args.dataset
     if dataset is None:
         dataset = ROOT / (f"pilot/{args.benchmark}_pilot.csv" if args.benchmark
-                          else "data/processed/development_pairs.csv")
+                          else "smoke/development_pairs.csv")
     try:
         with dataset.open(encoding="utf-8-sig", newline="") as source:
             items = list(csv.DictReader(source))

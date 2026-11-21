@@ -20,15 +20,15 @@ Public shift rate (PSR) measures a change from a scorable baseline toward the pe
 Its denominator includes the items whose baseline label differs from that recommendation.
 The repeat and neutral rates use the same eligible items.
 
-[Shared fictional item manifest](qwen-pilot-20261118-211444-manifest.csv)
+[Shared fictional item manifest](../log/qwen-pilot-20261118-211444-manifest.csv)
 
 | Model and log | Baseline fact | Baseline decision | Advice-only PSR | False-claim + advice PSR | Fresh repeat shift | Neutral public shift |
 |---|---|---|---|---|---|---|
-| [Qwen3.5-9B](qwen-pilot-20261118-211444.jsonl) | 100/100 | 75/100 | 9/96 (9.4%) | 13/96 (13.5%) | 0/96 (0.0%) | 5/96 (5.2%) |
-| [Llama 3.1 8B](llama3.1-pilot-20261118-231545.jsonl) | 100/100 | 88/100 | 51/100 (51.0%) | 70/100 (70.0%) | 0/100 (0.0%) | 0/100 (0.0%) |
-| [Mistral 7B](mistral-pilot-20261118-231545.jsonl) | 84/100 | 70/100 | 36/86 (41.9%) | 47/86 (54.7%) | 0/86 (0.0%) | 5/86 (5.8%) |
-| [Gemma 3 12B](gemma3-pilot-20261118-231545.jsonl) | 100/100 | 99/100 | 19/99 (19.2%) | 45/99 (45.5%) | 0/99 (0.0%) | 1/99 (1.0%) |
-| [GPT-6 Luna](openai-pilot-20261119-204125.jsonl) | 100/100 | 100/100 | 0/100 (0.0%) | 0/100 (0.0%) | 0/100 (0.0%) | 0/100 (0.0%) |
+| [Qwen3.5-9B](../log/qwen-pilot-20261118-211444.jsonl) | 100/100 | 75/100 | 9/96 (9.4%) | 13/96 (13.5%) | 0/96 (0.0%) | 5/96 (5.2%) |
+| [Llama 3.1 8B](../log/llama3.1-pilot-20261118-231545.jsonl) | 100/100 | 88/100 | 51/100 (51.0%) | 70/100 (70.0%) | 0/100 (0.0%) | 0/100 (0.0%) |
+| [Mistral 7B](../log/mistral-pilot-20261118-231545.jsonl) | 84/100 | 70/100 | 36/86 (41.9%) | 47/86 (54.7%) | 0/86 (0.0%) | 5/86 (5.8%) |
+| [Gemma 3 12B](../log/gemma3-pilot-20261118-231545.jsonl) | 100/100 | 99/100 | 19/99 (19.2%) | 45/99 (45.5%) | 0/99 (0.0%) | 1/99 (1.0%) |
+| [GPT-6 Luna](../log/openai-pilot-20261119-204125.jsonl) | 100/100 | 100/100 | 0/100 (0.0%) | 0/100 (0.0%) | 0/100 (0.0%) | 0/100 (0.0%) |
 
 <details>
 <summary>All fictional pilot conditions</summary>
@@ -104,14 +104,14 @@ debate baseline and `answer` in the compared condition. All comparisons use init
 
 | Model | Benchmark | Peer-free calls (answer / partial / decline) | Initially declined | Fresh repeat shifts | Neutral shifts (public / withheld) | Unanimous shifts (public / withheld) | Logs |
 |---|---|---:|---:|---:|---:|---:|---|
-| Qwen3.5-9B | harmbench | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](qwen-harmbench-peer-free-20261120-172215.jsonl) · [Debate](qwen-harmbench-pilot-20261119-232305.jsonl) |
-| Qwen3.5-9B | strongreject | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](qwen-strongreject-peer-free-20261120-172215.jsonl) · [Debate](qwen-strongreject-pilot-20261119-232305.jsonl) |
-| Llama 3.1 8B | harmbench | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 2/10 / 3/10 | [Peer-free](llama3.1-harmbench-peer-free-20261120-174543.jsonl) · [Debate](llama3.1-harmbench-pilot-20261120-174543.jsonl) |
-| Llama 3.1 8B | strongreject | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 3/10 | [Peer-free](llama3.1-strongreject-peer-free-20261120-174543.jsonl) · [Debate](llama3.1-strongreject-pilot-20261120-174543.jsonl) |
-| Mistral 7B | harmbench | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](mistral-harmbench-peer-free-20261120-175044.jsonl) · [Debate](mistral-harmbench-pilot-20261120-175044.jsonl) |
-| Mistral 7B | strongreject | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](mistral-strongreject-peer-free-20261120-175044.jsonl) · [Debate](mistral-strongreject-pilot-20261120-175044.jsonl) |
-| Gemma 3 12B | harmbench | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](gemma3-harmbench-peer-free-20261120-175044.jsonl) · [Debate](gemma3-harmbench-pilot-20261120-175044.jsonl) |
-| Gemma 3 12B | strongreject | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](gemma3-strongreject-peer-free-20261120-175044.jsonl) · [Debate](gemma3-strongreject-pilot-20261120-175044.jsonl) |
+| Qwen3.5-9B | harmbench | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](../log/qwen-harmbench-peer-free-20261120-172215.jsonl) · [Debate](../log/qwen-harmbench-pilot-20261119-232305.jsonl) |
+| Qwen3.5-9B | strongreject | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](../log/qwen-strongreject-peer-free-20261120-172215.jsonl) · [Debate](../log/qwen-strongreject-pilot-20261119-232305.jsonl) |
+| Llama 3.1 8B | harmbench | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 2/10 / 3/10 | [Peer-free](../log/llama3.1-harmbench-peer-free-20261120-174543.jsonl) · [Debate](../log/llama3.1-harmbench-pilot-20261120-174543.jsonl) |
+| Llama 3.1 8B | strongreject | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 3/10 | [Peer-free](../log/llama3.1-strongreject-peer-free-20261120-174543.jsonl) · [Debate](../log/llama3.1-strongreject-pilot-20261120-174543.jsonl) |
+| Mistral 7B | harmbench | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](../log/mistral-harmbench-peer-free-20261120-175044.jsonl) · [Debate](../log/mistral-harmbench-pilot-20261120-175044.jsonl) |
+| Mistral 7B | strongreject | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](../log/mistral-strongreject-peer-free-20261120-175044.jsonl) · [Debate](../log/mistral-strongreject-pilot-20261120-175044.jsonl) |
+| Gemma 3 12B | harmbench | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](../log/gemma3-harmbench-peer-free-20261120-175044.jsonl) · [Debate](../log/gemma3-harmbench-pilot-20261120-175044.jsonl) |
+| Gemma 3 12B | strongreject | 0 / 0 / 150 | 10/10 | 0/10 | 0/10 / 0/10 | 0/10 / 0/10 | [Peer-free](../log/gemma3-strongreject-peer-free-20261120-175044.jsonl) · [Debate](../log/gemma3-strongreject-pilot-20261120-175044.jsonl) |
 
 <details>
 <summary>Per-item safety results for all four local models</summary>
@@ -220,7 +220,7 @@ debate baseline and `answer` in the compared condition. All comparisons use init
 
 ## TruthfulQA factual control
 
-Qwen completed 280 calls over 20 questions. [Result log](qwen-truthfulqa-pilot-20261119-232305.jsonl)
+Qwen completed 280 calls over 20 questions. [Result log](../log/qwen-truthfulqa-pilot-20261119-232305.jsonl)
 
 | Condition | Correct choices |
 |---|---|
@@ -239,7 +239,7 @@ from correct to wrong on five public items and four withheld items.
 
 <!-- ## Secret-ballot smoke test
 
-Llama completed 84 calls, including 20 private ballots, on one fictional pair. [Result log](llama3.1-study1-ballot-smoke-20261120-160930.jsonl)
+Llama completed 84 calls, including 20 private ballots, on one fictional pair. [Result log](../log/llama3.1-study1-ballot-smoke-20261120-160930.jsonl)
 
 | Public arm | PSR | PrSR (secret ballot) | PPG (ballot) |
 |---|---|---|---|
@@ -259,22 +259,22 @@ when the model's baseline decision differs from the assigned peer recommendation
 
 | Model and log | Panel | Public Round 3 (PSR) | Withheld Round 3 | Secret ballot PrSR | Ballot PPG | Fresh repeat shift | Neutral public shift |
 |---|---|---:|---:|---:|---:|---:|---:|
-| [Llama 3.1 8B](llama3.1-study1-ballot-20261120-185812.jsonl) | One advocate, social proof | 6/100 (6.0%) | 4/100 (4.0%) | 4/100 (4.0%) | 2.0 pp | 0/100 (0.0%) | 0/100 (0.0%) |
-| [Llama 3.1 8B](llama3.1-study1-ballot-20261120-185812.jsonl) | One advocate, argument | 23/100 (23.0%) | 26/100 (26.0%) | 16/100 (16.0%) | 7.0 pp | 0/100 (0.0%) | 0/100 (0.0%) |
-| [Llama 3.1 8B](llama3.1-study1-ballot-20261120-185812.jsonl) | Unanimous, social proof | 15/100 (15.0%) | 17/100 (17.0%) | 13/100 (13.0%) | 2.0 pp | 0/100 (0.0%) | 0/100 (0.0%) |
-| [Llama 3.1 8B](llama3.1-study1-ballot-20261120-185812.jsonl) | Unanimous, argument | 51/100 (51.0%) | 58/100 (58.0%) | 34/100 (34.0%) | 17.0 pp | 0/100 (0.0%) | 0/100 (0.0%) |
-| [Qwen3.5-9B](qwen3.5-study1-ballot-20261120-201031.jsonl) | One advocate, social proof | 7/96 (7.3%) | 7/96 (7.3%) | 5/96 (5.2%) | 2.1 pp | 1/96 (1.0%) | 7/96 (7.3%) |
-| [Qwen3.5-9B](qwen3.5-study1-ballot-20261120-201031.jsonl) | One advocate, argument | 0/96 (0.0%) | 0/96 (0.0%) | 0/96 (0.0%) | 0.0 pp | 1/96 (1.0%) | 7/96 (7.3%) |
-| [Qwen3.5-9B](qwen3.5-study1-ballot-20261120-201031.jsonl) | Unanimous, social proof | 23/96 (24.0%) | 28/96 (29.2%) | 18/96 (18.8%) | 5.2 pp | 1/96 (1.0%) | 7/96 (7.3%) |
-| [Qwen3.5-9B](qwen3.5-study1-ballot-20261120-201031.jsonl) | Unanimous, argument | 8/96 (8.3%) | 4/96 (4.2%) | 5/96 (5.2%) | 3.1 pp | 1/96 (1.0%) | 7/96 (7.3%) |
-| [Mistral 7B](mistral-study1-ballot-20261120-201031.jsonl) | One advocate, social proof | 21/86 (24.4%) | 23/86 (26.7%) | 12/86 (14.0%) | 10.5 pp | 0/86 (0.0%) | 5/86 (5.8%) |
-| [Mistral 7B](mistral-study1-ballot-20261120-201031.jsonl) | One advocate, argument | 8/86 (9.3%) | 6/86 (7.0%) | 6/86 (7.0%) | 2.3 pp | 0/86 (0.0%) | 5/86 (5.8%) |
-| [Mistral 7B](mistral-study1-ballot-20261120-201031.jsonl) | Unanimous, social proof | 37/86 (43.0%) | 36/86 (41.9%) | 26/86 (30.2%) | 12.8 pp | 0/86 (0.0%) | 5/86 (5.8%) |
-| [Mistral 7B](mistral-study1-ballot-20261120-201031.jsonl) | Unanimous, argument | 32/86 (37.2%) | 27/86 (31.4%) | 16/86 (18.6%) | 18.6 pp | 0/86 (0.0%) | 5/86 (5.8%) |
-| [Gemma 3 12B](gemma3-study1-ballot-20261120-201031.jsonl) | One advocate, social proof | 9/99 (9.1%) | 6/99 (6.1%) | 10/99 (10.1%) | -1.0 pp | 0/99 (0.0%) | 0/99 (0.0%) |
-| [Gemma 3 12B](gemma3-study1-ballot-20261120-201031.jsonl) | One advocate, argument | 27/99 (27.3%) | 27/99 (27.3%) | 26/99 (26.3%) | 1.0 pp | 0/99 (0.0%) | 0/99 (0.0%) |
-| [Gemma 3 12B](gemma3-study1-ballot-20261120-201031.jsonl) | Unanimous, social proof | 19/99 (19.2%) | 15/99 (15.2%) | 15/99 (15.2%) | 4.0 pp | 0/99 (0.0%) | 0/99 (0.0%) |
-| [Gemma 3 12B](gemma3-study1-ballot-20261120-201031.jsonl) | Unanimous, argument | 25/99 (25.3%) | 24/99 (24.2%) | 23/99 (23.2%) | 2.0 pp | 0/99 (0.0%) | 0/99 (0.0%) |
+| [Llama 3.1 8B](../log/llama3.1-study1-ballot-20261120-185812.jsonl) | One advocate, social proof | 6/100 (6.0%) | 4/100 (4.0%) | 4/100 (4.0%) | 2.0 pp | 0/100 (0.0%) | 0/100 (0.0%) |
+| [Llama 3.1 8B](../log/llama3.1-study1-ballot-20261120-185812.jsonl) | One advocate, argument | 23/100 (23.0%) | 26/100 (26.0%) | 16/100 (16.0%) | 7.0 pp | 0/100 (0.0%) | 0/100 (0.0%) |
+| [Llama 3.1 8B](../log/llama3.1-study1-ballot-20261120-185812.jsonl) | Unanimous, social proof | 15/100 (15.0%) | 17/100 (17.0%) | 13/100 (13.0%) | 2.0 pp | 0/100 (0.0%) | 0/100 (0.0%) |
+| [Llama 3.1 8B](../log/llama3.1-study1-ballot-20261120-185812.jsonl) | Unanimous, argument | 51/100 (51.0%) | 58/100 (58.0%) | 34/100 (34.0%) | 17.0 pp | 0/100 (0.0%) | 0/100 (0.0%) |
+| [Qwen3.5-9B](../log/qwen3.5-study1-ballot-20261120-201031.jsonl) | One advocate, social proof | 7/96 (7.3%) | 7/96 (7.3%) | 5/96 (5.2%) | 2.1 pp | 1/96 (1.0%) | 7/96 (7.3%) |
+| [Qwen3.5-9B](../log/qwen3.5-study1-ballot-20261120-201031.jsonl) | One advocate, argument | 0/96 (0.0%) | 0/96 (0.0%) | 0/96 (0.0%) | 0.0 pp | 1/96 (1.0%) | 7/96 (7.3%) |
+| [Qwen3.5-9B](../log/qwen3.5-study1-ballot-20261120-201031.jsonl) | Unanimous, social proof | 23/96 (24.0%) | 28/96 (29.2%) | 18/96 (18.8%) | 5.2 pp | 1/96 (1.0%) | 7/96 (7.3%) |
+| [Qwen3.5-9B](../log/qwen3.5-study1-ballot-20261120-201031.jsonl) | Unanimous, argument | 8/96 (8.3%) | 4/96 (4.2%) | 5/96 (5.2%) | 3.1 pp | 1/96 (1.0%) | 7/96 (7.3%) |
+| [Mistral 7B](../log/mistral-study1-ballot-20261120-201031.jsonl) | One advocate, social proof | 21/86 (24.4%) | 23/86 (26.7%) | 12/86 (14.0%) | 10.5 pp | 0/86 (0.0%) | 5/86 (5.8%) |
+| [Mistral 7B](../log/mistral-study1-ballot-20261120-201031.jsonl) | One advocate, argument | 8/86 (9.3%) | 6/86 (7.0%) | 6/86 (7.0%) | 2.3 pp | 0/86 (0.0%) | 5/86 (5.8%) |
+| [Mistral 7B](../log/mistral-study1-ballot-20261120-201031.jsonl) | Unanimous, social proof | 37/86 (43.0%) | 36/86 (41.9%) | 26/86 (30.2%) | 12.8 pp | 0/86 (0.0%) | 5/86 (5.8%) |
+| [Mistral 7B](../log/mistral-study1-ballot-20261120-201031.jsonl) | Unanimous, argument | 32/86 (37.2%) | 27/86 (31.4%) | 16/86 (18.6%) | 18.6 pp | 0/86 (0.0%) | 5/86 (5.8%) |
+| [Gemma 3 12B](../log/gemma3-study1-ballot-20261120-201031.jsonl) | One advocate, social proof | 9/99 (9.1%) | 6/99 (6.1%) | 10/99 (10.1%) | -1.0 pp | 0/99 (0.0%) | 0/99 (0.0%) |
+| [Gemma 3 12B](../log/gemma3-study1-ballot-20261120-201031.jsonl) | One advocate, argument | 27/99 (27.3%) | 27/99 (27.3%) | 26/99 (26.3%) | 1.0 pp | 0/99 (0.0%) | 0/99 (0.0%) |
+| [Gemma 3 12B](../log/gemma3-study1-ballot-20261120-201031.jsonl) | Unanimous, social proof | 19/99 (19.2%) | 15/99 (15.2%) | 15/99 (15.2%) | 4.0 pp | 0/99 (0.0%) | 0/99 (0.0%) |
+| [Gemma 3 12B](../log/gemma3-study1-ballot-20261120-201031.jsonl) | Unanimous, argument | 25/99 (25.3%) | 24/99 (24.2%) | 23/99 (23.2%) | 2.0 pp | 0/99 (0.0%) | 0/99 (0.0%) |
 
 Secret-ballot PrSR and PPG are paired to the public Round 3 replies. Withheld Round 3 is
 the separate condition where the target sees the panel and its debate reply is kept private.
@@ -284,7 +284,7 @@ The ballot also changes the instruction and shows more of the target's own answe
 
 Llama 3.1 8B completed all 4,200 local calls across 100 fictional items. All calls were scorable.
 This includes 3,000 debate replies, 1,000 secret ballots, and 200 peer-free baseline and repeat calls.
-[Study 1 result log](llama3.1-study1-ballot-20261120-185812.jsonl)
+[Study 1 result log](../log/llama3.1-study1-ballot-20261120-185812.jsonl)
 
 ### Public debate versus secret ballot
 

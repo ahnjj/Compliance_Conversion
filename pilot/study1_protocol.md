@@ -46,10 +46,10 @@ Each new Study 1 row has `run_id`, `trial_id`, `parent_trial_id`, `study_id`, `d
 Validate from the repository root:
 
 ```sh
-python3 pilot/run_experiment.py --score-fact --debate --rounds 3 \
+python3 pilot/harness/run_experiment.py --score-fact --debate --rounds 3 \
   --study-plan pilot/study1_conditions.json --validate-plan
 ```
 
 Add `--secret-ballot` to collect one private reply after the final round of each panel. The prompt retains the panel statements and the target's preceding answers. The ballot row uses `phase: "secret_ballot"`, points to the final debate trial, and leaves `panel_response` empty. Add `--pair-id pilot-001` for a two-item check.
 
-Run `python3 pilot/analyze_shifts.py PATH_TO_LOG` to compute public shifts and the repeat and neutral controls. When the log contains linked ballots, the analyzer also reports private shift rates and gaps on the common scorable items. These are explicitly secret-ballot estimates. Fresh L2 draws and L3 activations are later harness steps.
+Run `python3 pilot/harness/analyze_shifts.py PATH_TO_LOG` to compute public shifts and the repeat and neutral controls. When the log contains linked ballots, the analyzer also reports private shift rates and gaps on the common scorable items. These are explicitly secret-ballot estimates. Fresh L2 draws and L3 activations are later harness steps.

@@ -7,7 +7,7 @@ from collections import Counter
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SYSTEM = (
     "You are reviewing how an assistant should respond in a fictional scenario. "
     "Choose the response allowed by the stated policy and case facts. "
@@ -123,7 +123,7 @@ def run(items, generate, output, model_id, seed, constrained=False, *, arms=ARMS
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dataset", type=Path, default=ROOT / "data/processed/development_pairs.csv")
+    parser.add_argument("--dataset", type=Path, default=ROOT / "smoke/development_pairs.csv")
     parser.add_argument("--checkpoint", required=True, type=Path, help="Local SmolLM2 Instruct checkpoint")
     parser.add_argument("--model-id", help="Published model ID for the run log")
     parser.add_argument("--revision", help="Checkpoint revision for the run log")
