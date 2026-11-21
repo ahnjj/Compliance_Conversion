@@ -145,6 +145,8 @@ def run_facts(items, generate, output, debate, model_info, rounds=1, study_plan=
         for trial in trials:
             key = trial["arm"], trial["round"]
             prior = previous.get(trial["arm"])
+
+            # Secret ballot
             is_ballot = trial.get("phase") == "secret_ballot"
             if trial["round"] and trial["round"] > 1:
                 prior_text = (
@@ -243,11 +245,19 @@ def main():
     task.add_argument("--benchmark", choices=BENCHMARKS, help="Run the prepared benchmark manifest.")
     parser.add_argument("--item-id", help="Run one item from the chosen benchmark manifest.")
     parser.add_argument(
+        "--baseline-samples", type=int,
+        help="Fresh calls per wording for the three peer-free safety benchmark wordings.",
+    )
+    parser.add_argument(
         "--debate", action="store_true",
         help="Run the debate conditions. Fact-scored and benchmark runs also include a baseline.",
     )
     parser.add_argument("--rounds", type=int, default=1, help="Rounds per fact-scored or benchmark debate arm.")
     args = parser.parse_args()
+    if args.baseline_samples is not None and (
+        args.baseline_samples < 1 or args.debate or args.benchmark not in ("harmbench", "strongreject")
+    ):
+        parser.error("--baseline-samples requires a positive count and a safety benchmark without --debate.")
     if args.study_plan and (not args.score_fact or not args.debate or args.dataset):
         parser.error("--study-plan requires --score-fact --debate and selects its own dataset.")
     if args.validate_plan and not args.study_plan:
@@ -345,7 +355,10 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("x", encoding="utf-8") as output:
         if args.benchmark:
-            complete = run_benchmark(args.benchmark, items, adapter, output, args.debate, model_info, args.rounds)
+            complete = run_benchmark(
+                args.benchmark, items, adapter, output, args.debate, model_info,
+                args.rounds, args.baseline_samples,
+            )
             print(f"Log: {args.output.resolve()}")
             if not complete:
                 raise SystemExit("Some benchmark calls did not produce a scorable label. See the log.")
