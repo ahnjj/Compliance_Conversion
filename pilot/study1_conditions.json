@@ -1,0 +1,106 @@
+{
+  "study_id": "study1",
+  "design_version": 1,
+  "dataset": "pilot/pilot_fact_pairs.csv",
+  "dataset_sha256": "b88f97c945fb0e217f7998be8c839c78d7a3ebc241db54ae513ff1b93e7be30c",
+  "confederates": "study1_confederates.json",
+  "conditions": [
+    {
+      "condition_id": "baseline",
+      "phase": "baseline",
+      "peer_configuration": "none",
+      "message_content": null,
+      "visibility": null,
+      "advocate_count": 0
+    },
+    {
+      "condition_id": "repeat_ask",
+      "phase": "repeat",
+      "peer_configuration": "none",
+      "message_content": null,
+      "visibility": null,
+      "advocate_count": 0
+    },
+    {
+      "condition_id": "neutral_neutral_public",
+      "phase": "debate",
+      "peer_configuration": "neutral",
+      "message_content": "neutral",
+      "visibility": "public",
+      "advocate_count": 0
+    },
+    {
+      "condition_id": "neutral_neutral_withheld",
+      "phase": "debate",
+      "peer_configuration": "neutral",
+      "message_content": "neutral",
+      "visibility": "withheld",
+      "advocate_count": 0
+    },
+    {
+      "condition_id": "single_advocate_social_proof_public",
+      "phase": "debate",
+      "peer_configuration": "single_advocate",
+      "message_content": "social_proof",
+      "visibility": "public",
+      "advocate_count": 1
+    },
+    {
+      "condition_id": "single_advocate_social_proof_withheld",
+      "phase": "debate",
+      "peer_configuration": "single_advocate",
+      "message_content": "social_proof",
+      "visibility": "withheld",
+      "advocate_count": 1
+    },
+    {
+      "condition_id": "single_advocate_argument_public",
+      "phase": "debate",
+      "peer_configuration": "single_advocate",
+      "message_content": "argument",
+      "visibility": "public",
+      "advocate_count": 1
+    },
+    {
+      "condition_id": "single_advocate_argument_withheld",
+      "phase": "debate",
+      "peer_configuration": "single_advocate",
+      "message_content": "argument",
+      "visibility": "withheld",
+      "advocate_count": 1
+    },
+    {
+      "condition_id": "unanimous_social_proof_public",
+      "phase": "debate",
+      "peer_configuration": "unanimous",
+      "message_content": "social_proof",
+      "visibility": "public",
+      "advocate_count": 4
+    },
+    {
+      "condition_id": "unanimous_social_proof_withheld",
+      "phase": "debate",
+      "peer_configuration": "unanimous",
+      "message_content": "social_proof",
+      "visibility": "withheld",
+      "advocate_count": 4
+    },
+    {
+      "condition_id": "unanimous_argument_public",
+      "phase": "debate",
+      "peer_configuration": "unanimous",
+      "message_content": "argument",
+      "visibility": "public",
+      "advocate_count": 4
+    },
+    {
+      "condition_id": "unanimous_argument_withheld",
+      "phase": "debate",
+      "peer_configuration": "unanimous",
+      "message_content": "argument",
+      "visibility": "withheld",
+      "advocate_count": 4
+    }
+  ],
+  "confederates_sha256": "2165e1a81b95e5a11187a0ca85f6b41894ba91ec9917796105df39f04016a6d3"
+}

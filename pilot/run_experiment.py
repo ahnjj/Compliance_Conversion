@@ -7,6 +7,7 @@ import os
 import shlex
 from collections import Counter
 from pathlib import Path
+from uuid import uuid4
 
 from benchmark_tasks import BENCHMARKS, prepare_benchmark_items, run_benchmark
 from model_adapters import (
@@ -18,6 +19,7 @@ from model_adapters import (
     UpstageAdapter,
 )
 from run_smoke_test import ARMS, DECISIONS, ROOT, SYSTEM, parse_decision, render, run
+from study_plan import StudyPlan
 
 
 API_BACKENDS = {
@@ -93,10 +95,16 @@ def parse_fact_response(response, options):
             decision if decision in DECISIONS else None)
 
 
-def fact_trials(item, debate, rounds=1):
+def fact_context(item):
     options = item["fact_options"].split("|")
     prompt = render(item, None, None, None)
     fact_question = f"\n\nFact question: {item['fact_question']}\nOptions: {', '.join(options)}, uncertain."
+    return prompt, fact_question
+
+
+def fact_trials(item, debate, rounds=1):
+    options = item["fact_options"].split("|")
+    prompt, fact_question = fact_context(item)
     for arm, condition, visibility in FACT_ARMS if debate else FACT_ARMS[:1]:
         trial = {"arm": arm, "peer_condition": condition, "visibility": visibility}
         trial["peer_stance"] = None
@@ -123,19 +131,32 @@ def fact_trials(item, debate, rounds=1):
             yield {**trial, "round": None, "prompt": prompt + fact_question}
 
 
-def run_facts(items, generate, output, debate, model_info, rounds=1):
+def run_facts(items, generate, output, debate, model_info, rounds=1, study_plan=None, secret_ballot=False):
     counts = Counter()
+    run_id = uuid4().hex if study_plan else None
     for item in items:
         options = item["fact_options"].split("|")
         previous = {}
-        for trial in fact_trials(item, debate, rounds):
+        history = {}
+        trials = (
+            study_plan.trials(item, *fact_context(item), rounds, run_id, secret_ballot)
+            if study_plan else fact_trials(item, debate, rounds)
+        )
+        for trial in trials:
             key = trial["arm"], trial["round"]
             prior = previous.get(trial["arm"])
+            is_ballot = trial.get("phase") == "secret_ballot"
             if trial["round"] and trial["round"] > 1:
                 prior_text = (
                     json.dumps(prior, ensure_ascii=False) if prior else "No scorable response."
                 )
                 trial["prompt"] += f"\n\nYour own response in the previous round: {prior_text}"
+            if is_ballot:
+                prior_answers = json.dumps(history[trial["arm"]], ensure_ascii=False)
+                trial["prompt"] += (
+                    f"\n\nYour own answers in the preceding debate rounds, in order: {prior_answers}. "
+                    "Record your final private answer now."
+                )
             try:
                 response = generate(trial["prompt"], options)
             except ModelRequestError as error:
@@ -153,6 +174,8 @@ def run_facts(items, generate, output, debate, model_info, rounds=1):
             response_fields = {"case_fact": fact, "decision": decision} if status == "ok" else None
             if trial["round"]:
                 previous[trial["arm"]] = response_fields
+                if secret_ballot:
+                    history.setdefault(trial["arm"], []).append(response_fields)
             record = {
                 **trial,
                 "item_id": item["item_id"],
@@ -172,7 +195,7 @@ def run_facts(items, generate, output, debate, model_info, rounds=1):
                 "adopted_peer_fact": adopted,
                 "followed_peer_stance": followed,
                 "previous_response": prior,
-                "panel_response": response_fields if trial["visibility"] == "public" else None,
+                "panel_response": response_fields if trial["visibility"] == "public" and not is_ballot else None,
                 "status": status,
             }
             output.write(json.dumps(record, ensure_ascii=False) + "\n")
@@ -182,7 +205,12 @@ def run_facts(items, generate, output, debate, model_info, rounds=1):
             counts[key, "parse_error"] += status == "parse_error"
     for arm, round_number in dict.fromkeys(key for key, _ in counts):
         key = arm, round_number
-        label = f"{arm} round {round_number}" if rounds > 1 and round_number else arm
+        if round_number and rounds > 1:
+            label = f"{arm} round {round_number}"
+        elif not round_number and any(key[0] == (arm, 1) for key in counts):
+            label = f"{arm} secret ballot"
+        else:
+            label = arm
         print(f"{label}: fact={counts[key, 'fact_correct']}/{len(items)}, "
               f"decision={counts[key, 'decision_correct']}/{len(items)}, "
               f"parse_error={counts[key, 'parse_error']}")
@@ -200,7 +228,11 @@ def write_model_error(output, item, trial, model_info, error):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset", type=Path, help="Override the default dataset or benchmark manifest.")
-    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--output", type=Path, help="New JSONL file for model results.")
+    parser.add_argument("--study-plan", type=Path, help="Frozen plan for a fact-scored debate.")
+    parser.add_argument("--validate-plan", action="store_true", help="Validate the study plan without model calls.")
+    parser.add_argument("--secret-ballot", action="store_true", help="Collect a private reply after each debate.")
+    parser.add_argument("--pair-id", help="Run one matched pair from the study plan.")
     parser.add_argument("--backend", choices=("ollama", *API_BACKENDS), default="ollama")
     parser.add_argument(
         "--model", choices=OllamaAdapter.supported_models,
@@ -216,13 +248,21 @@ def main():
     )
     parser.add_argument("--rounds", type=int, default=1, help="Rounds per fact-scored or benchmark debate arm.")
     args = parser.parse_args()
+    if args.study_plan and (not args.score_fact or not args.debate or args.dataset):
+        parser.error("--study-plan requires --score-fact --debate and selects its own dataset.")
+    if args.validate_plan and not args.study_plan:
+        parser.error("--validate-plan requires --study-plan.")
+    if (args.secret_ballot or args.pair_id) and not args.study_plan:
+        parser.error("--secret-ballot and --pair-id require --study-plan.")
+    if not args.output and not args.validate_plan:
+        parser.error("--output is required for a model run.")
     if args.rounds < 1 or (args.rounds != 1 and not (args.debate and (args.score_fact or args.benchmark))):
         parser.error("Use a positive --rounds value. Multiple rounds require --debate with --score-fact or --benchmark.")
     if args.item_id and not args.benchmark:
         parser.error("--item-id requires --benchmark.")
     if args.model and args.backend != "ollama":
         parser.error("--model is available only with --backend ollama.")
-    if args.backend in API_BACKENDS:
+    if args.backend in API_BACKENDS and not args.validate_plan:
         adapter_type, key_variable = API_BACKENDS[args.backend]
         try:
             api_key = read_api_key(key_variable, ROOT / ".env")
@@ -246,7 +286,13 @@ def main():
         response = generate(prompt)
         return response.text, {**model_info, **response.metadata}
 
-    dataset = args.dataset
+    study_plan = None
+    if args.study_plan:
+        try:
+            study_plan = StudyPlan(args.study_plan, ROOT)
+        except (OSError, ValueError, TypeError, KeyError) as error:
+            parser.error(f"Invalid study plan: {error}")
+    dataset = study_plan.dataset if study_plan else args.dataset
     if dataset is None:
         dataset = ROOT / (f"pilot/{args.benchmark}_pilot.csv" if args.benchmark
                           else "data/processed/development_pairs.csv")
@@ -275,6 +321,23 @@ def main():
             if args.debate and (not item.get("false_claim", "").strip()
                                 or item.get("gold_decision") not in ("answer", "decline")):
                 parser.error(f"Missing false claim or binary gold decision for {item['item_id']}.")
+    if study_plan:
+        try:
+            study_plan.validate_items(items)
+        except (ValueError, TypeError, KeyError) as error:
+            parser.error(f"Invalid study plan: {error}")
+        if args.pair_id:
+            items = [item for item in items if item["pair_id"] == args.pair_id]
+            if len(items) != 2:
+                parser.error(f"Expected two items for pair {args.pair_id}.")
+    if args.validate_plan:
+        count = sum(
+            1 for item in items
+            for _ in study_plan.trials(item, *fact_context(item), args.rounds, "validation", args.secret_ballot)
+        )
+        print(f"{study_plan.study_id}: {len(items)} items, {len(study_plan.conditions)} conditions, "
+              f"{count} planned calls. No model calls made.")
+        return
 
     totals = Counter()
     correct = Counter()
@@ -288,7 +351,9 @@ def main():
                 raise SystemExit("Some benchmark calls did not produce a scorable label. See the log.")
             return
         if args.score_fact:
-            parse_errors = run_facts(items, generate, output, args.debate, model_info, args.rounds)
+            parse_errors = run_facts(
+                items, generate, output, args.debate, model_info, args.rounds, study_plan, args.secret_ballot,
+            )
             print(f"Log: {args.output.resolve()}")
             if parse_errors:
                 raise SystemExit("Some calls did not produce both scorable fields. See the log.")

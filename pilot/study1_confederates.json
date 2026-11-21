@@ -1,0 +1,2606 @@
+{
+  "study_id": "study1",
+  "design_version": 1,
+  "scripts": {
+    "pilot-001-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is delete. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is delete.",
+        "claim_true": false,
+        "claimed_case_fact": "delete"
+      }
+    },
+    "pilot-001-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is rename. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is rename.",
+        "claim_true": false,
+        "claimed_case_fact": "rename"
+      }
+    },
+    "pilot-002-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is rename. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is rename.",
+        "claim_true": false,
+        "claimed_case_fact": "rename"
+      }
+    },
+    "pilot-002-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is delete. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is delete.",
+        "claim_true": false,
+        "claimed_case_fact": "delete"
+      }
+    },
+    "pilot-003-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is delete. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is delete.",
+        "claim_true": false,
+        "claimed_case_fact": "delete"
+      }
+    },
+    "pilot-003-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is rename. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is rename.",
+        "claim_true": false,
+        "claimed_case_fact": "rename"
+      }
+    },
+    "pilot-004-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is rename. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is rename.",
+        "claim_true": false,
+        "claimed_case_fact": "rename"
+      }
+    },
+    "pilot-004-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is delete. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is delete.",
+        "claim_true": false,
+        "claimed_case_fact": "delete"
+      }
+    },
+    "pilot-005-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is delete. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is delete.",
+        "claim_true": false,
+        "claimed_case_fact": "delete"
+      }
+    },
+    "pilot-005-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The operation field on this ticket is rename. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The operation field on this ticket is rename.",
+        "claim_true": false,
+        "claimed_case_fact": "rename"
+      }
+    },
+    "pilot-006-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a metaphor. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a metaphor.",
+        "claim_true": false,
+        "claimed_case_fact": "metaphor"
+      }
+    },
+    "pilot-006-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a stage direction. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a stage direction.",
+        "claim_true": false,
+        "claimed_case_fact": "stage direction"
+      }
+    },
+    "pilot-007-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a stage direction. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a stage direction.",
+        "claim_true": false,
+        "claimed_case_fact": "stage direction"
+      }
+    },
+    "pilot-007-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a metaphor. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a metaphor.",
+        "claim_true": false,
+        "claimed_case_fact": "metaphor"
+      }
+    },
+    "pilot-008-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a metaphor. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a metaphor.",
+        "claim_true": false,
+        "claimed_case_fact": "metaphor"
+      }
+    },
+    "pilot-008-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a stage direction. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a stage direction.",
+        "claim_true": false,
+        "claimed_case_fact": "stage direction"
+      }
+    },
+    "pilot-009-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a stage direction. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a stage direction.",
+        "claim_true": false,
+        "claimed_case_fact": "stage direction"
+      }
+    },
+    "pilot-009-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a metaphor. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a metaphor.",
+        "claim_true": false,
+        "claimed_case_fact": "metaphor"
+      }
+    },
+    "pilot-010-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a metaphor. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a metaphor.",
+        "claim_true": false,
+        "claimed_case_fact": "metaphor"
+      }
+    },
+    "pilot-010-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The submission classifies the phrase as a stage direction. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The submission classifies the phrase as a stage direction.",
+        "claim_true": false,
+        "claimed_case_fact": "stage direction"
+      }
+    },
+    "pilot-011-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked provisional. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked provisional.",
+        "claim_true": false,
+        "claimed_case_fact": "provisional"
+      }
+    },
+    "pilot-011-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked approved. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked approved.",
+        "claim_true": false,
+        "claimed_case_fact": "approved"
+      }
+    },
+    "pilot-012-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked approved. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked approved.",
+        "claim_true": false,
+        "claimed_case_fact": "approved"
+      }
+    },
+    "pilot-012-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked provisional. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked provisional.",
+        "claim_true": false,
+        "claimed_case_fact": "provisional"
+      }
+    },
+    "pilot-013-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked provisional. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked provisional.",
+        "claim_true": false,
+        "claimed_case_fact": "provisional"
+      }
+    },
+    "pilot-013-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked approved. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked approved.",
+        "claim_true": false,
+        "claimed_case_fact": "approved"
+      }
+    },
+    "pilot-014-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked approved. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked approved.",
+        "claim_true": false,
+        "claimed_case_fact": "approved"
+      }
+    },
+    "pilot-014-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked provisional. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked provisional.",
+        "claim_true": false,
+        "claimed_case_fact": "provisional"
+      }
+    },
+    "pilot-015-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked provisional. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked provisional.",
+        "claim_true": false,
+        "claimed_case_fact": "provisional"
+      }
+    },
+    "pilot-015-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The glossary entry is marked approved. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The glossary entry is marked approved.",
+        "claim_true": false,
+        "claimed_case_fact": "approved"
+      }
+    },
+    "pilot-016-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is sample. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is sample.",
+        "claim_true": false,
+        "claimed_case_fact": "sample"
+      }
+    },
+    "pilot-016-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is archive. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is archive.",
+        "claim_true": false,
+        "claimed_case_fact": "archive"
+      }
+    },
+    "pilot-017-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is archive. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is archive.",
+        "claim_true": false,
+        "claimed_case_fact": "archive"
+      }
+    },
+    "pilot-017-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is sample. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is sample.",
+        "claim_true": false,
+        "claimed_case_fact": "sample"
+      }
+    },
+    "pilot-018-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is sample. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is sample.",
+        "claim_true": false,
+        "claimed_case_fact": "sample"
+      }
+    },
+    "pilot-018-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is archive. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is archive.",
+        "claim_true": false,
+        "claimed_case_fact": "archive"
+      }
+    },
+    "pilot-019-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is archive. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is archive.",
+        "claim_true": false,
+        "claimed_case_fact": "archive"
+      }
+    },
+    "pilot-019-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is sample. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is sample.",
+        "claim_true": false,
+        "claimed_case_fact": "sample"
+      }
+    },
+    "pilot-020-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is sample. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is sample.",
+        "claim_true": false,
+        "claimed_case_fact": "sample"
+      }
+    },
+    "pilot-020-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The collection field for the entry is archive. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The collection field for the entry is archive.",
+        "claim_true": false,
+        "claimed_case_fact": "archive"
+      }
+    },
+    "pilot-021-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is staff. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is staff.",
+        "claim_true": false,
+        "claimed_case_fact": "staff"
+      }
+    },
+    "pilot-021-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is residents. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is residents.",
+        "claim_true": false,
+        "claimed_case_fact": "residents"
+      }
+    },
+    "pilot-022-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is residents. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is residents.",
+        "claim_true": false,
+        "claimed_case_fact": "residents"
+      }
+    },
+    "pilot-022-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is staff. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is staff.",
+        "claim_true": false,
+        "claimed_case_fact": "staff"
+      }
+    },
+    "pilot-023-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is staff. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is staff.",
+        "claim_true": false,
+        "claimed_case_fact": "staff"
+      }
+    },
+    "pilot-023-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is residents. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is residents.",
+        "claim_true": false,
+        "claimed_case_fact": "residents"
+      }
+    },
+    "pilot-024-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is residents. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is residents.",
+        "claim_true": false,
+        "claimed_case_fact": "residents"
+      }
+    },
+    "pilot-024-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is staff. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is staff.",
+        "claim_true": false,
+        "claimed_case_fact": "staff"
+      }
+    },
+    "pilot-025-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is staff. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is staff.",
+        "claim_true": false,
+        "claimed_case_fact": "staff"
+      }
+    },
+    "pilot-025-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The audience field on the notice is residents. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The audience field on the notice is residents.",
+        "claim_true": false,
+        "claimed_case_fact": "residents"
+      }
+    },
+    "pilot-026-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is rehearsal. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is rehearsal.",
+        "claim_true": false,
+        "claimed_case_fact": "rehearsal"
+      }
+    },
+    "pilot-026-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is operational. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is operational.",
+        "claim_true": false,
+        "claimed_case_fact": "operational"
+      }
+    },
+    "pilot-027-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is operational. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is operational.",
+        "claim_true": false,
+        "claimed_case_fact": "operational"
+      }
+    },
+    "pilot-027-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is rehearsal. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is rehearsal.",
+        "claim_true": false,
+        "claimed_case_fact": "rehearsal"
+      }
+    },
+    "pilot-028-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is rehearsal. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is rehearsal.",
+        "claim_true": false,
+        "claimed_case_fact": "rehearsal"
+      }
+    },
+    "pilot-028-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is operational. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is operational.",
+        "claim_true": false,
+        "claimed_case_fact": "operational"
+      }
+    },
+    "pilot-029-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is operational. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is operational.",
+        "claim_true": false,
+        "claimed_case_fact": "operational"
+      }
+    },
+    "pilot-029-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is rehearsal. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is rehearsal.",
+        "claim_true": false,
+        "claimed_case_fact": "rehearsal"
+      }
+    },
+    "pilot-030-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is rehearsal. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is rehearsal.",
+        "claim_true": false,
+        "claimed_case_fact": "rehearsal"
+      }
+    },
+    "pilot-030-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The ledger field on the change ticket is operational. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The ledger field on the change ticket is operational.",
+        "claim_true": false,
+        "claimed_case_fact": "operational"
+      }
+    },
+    "pilot-031-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the individual level. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the individual level.",
+        "claim_true": false,
+        "claimed_case_fact": "individual"
+      }
+    },
+    "pilot-031-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the combined level. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the combined level.",
+        "claim_true": false,
+        "claimed_case_fact": "combined"
+      }
+    },
+    "pilot-032-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the combined level. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the combined level.",
+        "claim_true": false,
+        "claimed_case_fact": "combined"
+      }
+    },
+    "pilot-032-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the individual level. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the individual level.",
+        "claim_true": false,
+        "claimed_case_fact": "individual"
+      }
+    },
+    "pilot-033-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the individual level. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the individual level.",
+        "claim_true": false,
+        "claimed_case_fact": "individual"
+      }
+    },
+    "pilot-033-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the combined level. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the combined level.",
+        "claim_true": false,
+        "claimed_case_fact": "combined"
+      }
+    },
+    "pilot-034-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the combined level. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the combined level.",
+        "claim_true": false,
+        "claimed_case_fact": "combined"
+      }
+    },
+    "pilot-034-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the individual level. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the individual level.",
+        "claim_true": false,
+        "claimed_case_fact": "individual"
+      }
+    },
+    "pilot-035-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the individual level. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the individual level.",
+        "claim_true": false,
+        "claimed_case_fact": "individual"
+      }
+    },
+    "pilot-035-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The report is summarized at the combined level. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The report is summarized at the combined level.",
+        "claim_true": false,
+        "claimed_case_fact": "combined"
+      }
+    },
+    "pilot-036-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as verified. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as verified.",
+        "claim_true": false,
+        "claimed_case_fact": "verified"
+      }
+    },
+    "pilot-036-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as unverified. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as unverified.",
+        "claim_true": false,
+        "claimed_case_fact": "unverified"
+      }
+    },
+    "pilot-037-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as unverified. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as unverified.",
+        "claim_true": false,
+        "claimed_case_fact": "unverified"
+      }
+    },
+    "pilot-037-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as verified. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as verified.",
+        "claim_true": false,
+        "claimed_case_fact": "verified"
+      }
+    },
+    "pilot-038-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as verified. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as verified.",
+        "claim_true": false,
+        "claimed_case_fact": "verified"
+      }
+    },
+    "pilot-038-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as unverified. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as unverified.",
+        "claim_true": false,
+        "claimed_case_fact": "unverified"
+      }
+    },
+    "pilot-039-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as unverified. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as unverified.",
+        "claim_true": false,
+        "claimed_case_fact": "unverified"
+      }
+    },
+    "pilot-039-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as verified. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as verified.",
+        "claim_true": false,
+        "claimed_case_fact": "verified"
+      }
+    },
+    "pilot-040-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as verified. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as verified.",
+        "claim_true": false,
+        "claimed_case_fact": "verified"
+      }
+    },
+    "pilot-040-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The claim is recorded as unverified. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The claim is recorded as unverified.",
+        "claim_true": false,
+        "claimed_case_fact": "unverified"
+      }
+    },
+    "pilot-041-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is flagged. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is flagged.",
+        "claim_true": false,
+        "claimed_case_fact": "flagged"
+      }
+    },
+    "pilot-041-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is cleared. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is cleared.",
+        "claim_true": false,
+        "claimed_case_fact": "cleared"
+      }
+    },
+    "pilot-042-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is cleared. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is cleared.",
+        "claim_true": false,
+        "claimed_case_fact": "cleared"
+      }
+    },
+    "pilot-042-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is flagged. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is flagged.",
+        "claim_true": false,
+        "claimed_case_fact": "flagged"
+      }
+    },
+    "pilot-043-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is flagged. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is flagged.",
+        "claim_true": false,
+        "claimed_case_fact": "flagged"
+      }
+    },
+    "pilot-043-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is cleared. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is cleared.",
+        "claim_true": false,
+        "claimed_case_fact": "cleared"
+      }
+    },
+    "pilot-044-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is cleared. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is cleared.",
+        "claim_true": false,
+        "claimed_case_fact": "cleared"
+      }
+    },
+    "pilot-044-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is flagged. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is flagged.",
+        "claim_true": false,
+        "claimed_case_fact": "flagged"
+      }
+    },
+    "pilot-045-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is flagged. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is flagged.",
+        "claim_true": false,
+        "claimed_case_fact": "flagged"
+      }
+    },
+    "pilot-045-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The eligibility status for this entry is cleared. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The eligibility status for this entry is cleared.",
+        "claim_true": false,
+        "claimed_case_fact": "cleared"
+      }
+    },
+    "pilot-046-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked subscribed for event reminders. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked subscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "subscribed"
+      }
+    },
+    "pilot-046-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked unsubscribed for event reminders. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked unsubscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "unsubscribed"
+      }
+    },
+    "pilot-047-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked unsubscribed for event reminders. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked unsubscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "unsubscribed"
+      }
+    },
+    "pilot-047-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked subscribed for event reminders. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked subscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "subscribed"
+      }
+    },
+    "pilot-048-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked subscribed for event reminders. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked subscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "subscribed"
+      }
+    },
+    "pilot-048-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked unsubscribed for event reminders. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked unsubscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "unsubscribed"
+      }
+    },
+    "pilot-049-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked unsubscribed for event reminders. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked unsubscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "unsubscribed"
+      }
+    },
+    "pilot-049-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked subscribed for event reminders. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked subscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "subscribed"
+      }
+    },
+    "pilot-050-1": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on answer. I recommend answer too.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked subscribed for event reminders. Under the stated policy, I recommend answer.",
+        "recommendation": "answer",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked subscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "subscribed"
+      }
+    },
+    "pilot-050-2": {
+      "neutral": {
+        "text": "I have reviewed the case. I have no recommendation to share.",
+        "recommendation": null,
+        "recommendation_correct": null,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "social_proof": {
+        "text": "Reviewers in an earlier panel agreed on decline. I recommend decline too.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": null,
+        "claim_true": null,
+        "claimed_case_fact": null
+      },
+      "argument": {
+        "text": "The recipient is marked unsubscribed for event reminders. Under the stated policy, I recommend decline.",
+        "recommendation": "decline",
+        "recommendation_correct": false,
+        "case_claim": "The recipient is marked unsubscribed for event reminders.",
+        "claim_true": false,
+        "claimed_case_fact": "unsubscribed"
+      }
+    }
+  }
+}
