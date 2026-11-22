@@ -1,0 +1,309 @@
+{
+  "study_id": "study1_checklist",
+  "source_file": "data/raw/xstest.csv",
+  "source_sha256": "a92c530769ac25bbb903b78d6dddea69feb5ae6f7e5d2df58dac5a650ca176fe",
+  "rounds": 3,
+  "schedule_seed": 21,
+  "pairs": [
+    {
+      "pair_id": "xstest-001",
+      "category": "homonyms",
+      "benign_row": 1,
+      "harmful_row": 26
+    },
+    {
+      "pair_id": "xstest-002",
+      "category": "homonyms",
+      "benign_row": 2,
+      "harmful_row": 27
+    },
+    {
+      "pair_id": "xstest-003",
+      "category": "homonyms",
+      "benign_row": 3,
+      "harmful_row": 28
+    },
+    {
+      "pair_id": "xstest-004",
+      "category": "homonyms",
+      "benign_row": 4,
+      "harmful_row": 29
+    },
+    {
+      "pair_id": "xstest-005",
+      "category": "homonyms",
+      "benign_row": 5,
+      "harmful_row": 30
+    },
+    {
+      "pair_id": "xstest-006",
+      "category": "homonyms",
+      "benign_row": 6,
+      "harmful_row": 31
+    },
+    {
+      "pair_id": "xstest-007",
+      "category": "homonyms",
+      "benign_row": 7,
+      "harmful_row": 32
+    },
+    {
+      "pair_id": "xstest-008",
+      "category": "homonyms",
+      "benign_row": 8,
+      "harmful_row": 33
+    },
+    {
+      "pair_id": "xstest-009",
+      "category": "homonyms",
+      "benign_row": 9,
+      "harmful_row": 34
+    },
+    {
+      "pair_id": "xstest-010",
+      "category": "homonyms",
+      "benign_row": 10,
+      "harmful_row": 35
+    },
+    {
+      "pair_id": "xstest-011",
+      "category": "homonyms",
+      "benign_row": 11,
+      "harmful_row": 36
+    },
+    {
+      "pair_id": "xstest-012",
+      "category": "homonyms",
+      "benign_row": 12,
+      "harmful_row": 37
+    },
+    {
+      "pair_id": "xstest-013",
+      "category": "homonyms",
+      "benign_row": 13,
+      "harmful_row": 38
+    },
+    {
+      "pair_id": "xstest-014",
+      "category": "homonyms",
+      "benign_row": 14,
+      "harmful_row": 39
+    },
+    {
+      "pair_id": "xstest-015",
+      "category": "homonyms",
+      "benign_row": 15,
+      "harmful_row": 40
+    },
+    {
+      "pair_id": "xstest-016",
+      "category": "homonyms",
+      "benign_row": 16,
+      "harmful_row": 41
+    },
+    {
+      "pair_id": "xstest-017",
+      "category": "homonyms",
+      "benign_row": 17,
+      "harmful_row": 42
+    },
+    {
+      "pair_id": "xstest-018",
+      "category": "homonyms",
+      "benign_row": 18,
+      "harmful_row": 43
+    },
+    {
+      "pair_id": "xstest-019",
+      "category": "homonyms",
+      "benign_row": 19,
+      "harmful_row": 44
+    },
+    {
+      "pair_id": "xstest-020",
+      "category": "homonyms",
+      "benign_row": 20,
+      "harmful_row": 45
+    },
+    {
+      "pair_id": "xstest-021",
+      "category": "homonyms",
+      "benign_row": 21,
+      "harmful_row": 46
+    },
+    {
+      "pair_id": "xstest-022",
+      "category": "homonyms",
+      "benign_row": 22,
+      "harmful_row": 47
+    },
+    {
+      "pair_id": "xstest-023",
+      "category": "homonyms",
+      "benign_row": 23,
+      "harmful_row": 48
+    },
+    {
+      "pair_id": "xstest-024",
+      "category": "homonyms",
+      "benign_row": 24,
+      "harmful_row": 49
+    },
+    {
+      "pair_id": "xstest-025",
+      "category": "homonyms",
+      "benign_row": 25,
+      "harmful_row": 50
+    },
+    {
+      "pair_id": "xstest-026",
+      "category": "safe_targets",
+      "benign_row": 101,
+      "harmful_row": 126
+    },
+    {
+      "pair_id": "xstest-027",
+      "category": "safe_targets",
+      "benign_row": 102,
+      "harmful_row": 127
+    },
+    {
+      "pair_id": "xstest-028",
+      "category": "safe_targets",
+      "benign_row": 103,
+      "harmful_row": 128
+    },
+    {
+      "pair_id": "xstest-029",
+      "category": "safe_targets",
+      "benign_row": 104,
+      "harmful_row": 129
+    },
+    {
+      "pair_id": "xstest-030",
+      "category": "safe_targets",
+      "benign_row": 105,
+      "harmful_row": 130
+    },
+    {
+      "pair_id": "xstest-031",
+      "category": "safe_targets",
+      "benign_row": 106,
+      "harmful_row": 131
+    },
+    {
+      "pair_id": "xstest-032",
+      "category": "safe_targets",
+      "benign_row": 107,
+      "harmful_row": 132
+    },
+    {
+      "pair_id": "xstest-033",
+      "category": "safe_targets",
+      "benign_row": 108,
+      "harmful_row": 133
+    },
+    {
+      "pair_id": "xstest-034",
+      "category": "safe_targets",
+      "benign_row": 109,
+      "harmful_row": 134
+    },
+    {
+      "pair_id": "xstest-035",
+      "category": "safe_targets",
+      "benign_row": 110,
+      "harmful_row": 135
+    },
+    {
+      "pair_id": "xstest-036",
+      "category": "safe_targets",
+      "benign_row": 111,
+      "harmful_row": 136
+    },
+    {
+      "pair_id": "xstest-037",
+      "category": "safe_targets",
+      "benign_row": 112,
+      "harmful_row": 137
+    },
+    {
+      "pair_id": "xstest-038",
+      "category": "safe_targets",
+      "benign_row": 113,
+      "harmful_row": 138
+    },
+    {
+      "pair_id": "xstest-039",
+      "category": "safe_targets",
+      "benign_row": 114,
+      "harmful_row": 139
+    },
+    {
+      "pair_id": "xstest-040",
+      "category": "safe_targets",
+      "benign_row": 115,
+      "harmful_row": 140
+    },
+    {
+      "pair_id": "xstest-041",
+      "category": "safe_targets",
+      "benign_row": 116,
+      "harmful_row": 141
+    },
+    {
+      "pair_id": "xstest-042",
+      "category": "safe_targets",
+      "benign_row": 117,
+      "harmful_row": 142
+    },
+    {
+      "pair_id": "xstest-043",
+      "category": "safe_targets",
+      "benign_row": 118,
+      "harmful_row": 143
+    },
+    {
+      "pair_id": "xstest-044",
+      "category": "safe_targets",
+      "benign_row": 119,
+      "harmful_row": 144
+    },
+    {
+      "pair_id": "xstest-045",
+      "category": "safe_targets",
+      "benign_row": 120,
+      "harmful_row": 145
+    },
+    {
+      "pair_id": "xstest-046",
+      "category": "safe_targets",
+      "benign_row": 121,
+      "harmful_row": 146
+    },
+    {
+      "pair_id": "xstest-047",
+      "category": "safe_targets",
+      "benign_row": 122,
+      "harmful_row": 147
+    },
+    {
+      "pair_id": "xstest-048",
+      "category": "safe_targets",
+      "benign_row": 123,
+      "harmful_row": 148
+    },
+    {
+      "pair_id": "xstest-049",
+      "category": "safe_targets",
+      "benign_row": 124,
+      "harmful_row": 149
+    },
+    {
+      "pair_id": "xstest-050",
+      "category": "safe_targets",
+      "benign_row": 125,
+      "harmful_row": 150
+    }
+  ]
+}
