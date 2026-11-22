@@ -1,6 +1,6 @@
 # Compliance or Conversion?
 
-[Consolidated model results](results/analysis/model_results.md)
+[Consolidated model results](results/analysis/model_results.md) · [Study progress and file map](#study-progress)
 
 - `pilot/harness/` contains the runners, model adapters, and scoring code. The pilot datasets and study plans are under `pilot/`.
 - `smoke/` contains the small development datasets and exhibit figure.
@@ -9,60 +9,59 @@
 
 ## Study progress
 
-| Step | Status | Evidence or remaining work |
-|---|---|---|
-| **1. Fictional L1 pilot** | Complete | Four open models and GPT-6 Luna ran the same 100 items in 50 matched pairs. The public shift rates (PSR) are in the [fictional pilot table](results/analysis/model_results.md#fictional-policy-pilot). |
-| **2. Benchmark L1 pilot** | Complete | Qwen ran 10 HarmBench items, 10 StrongREJECT items, and the [20-item TruthfulQA control](results/analysis/model_results.md#truthfulqa-factual-control). Llama, Mistral, and Gemma later ran the same [20 safety items](results/analysis/model_results.md#harmbench-and-strongreject). |
-| **3. Study 1 preparation** | Ready for review | The 100 fictional items, 12 conditions, and 300 labeled confederate messages are specified. The [protocol](pilot/study1_protocol.md) defines scoring, log fields, and the justification codebook. Independent review of the script labels is pending. |
-| **4. Fresh peer-free baseline** | Complete for the safety benchmarks | Each of the four local models made 300 calls across the same 20 safety items, with three decision-question wordings and five calls per wording. Each model chose `decline` on every call. The full fresh-query protocol on the 100 fictional items is pending. |
-| **5. Secret ballot and matched scoring** | Complete for four local models | Each model completed 1,000 ballots on the fictional set. The [Study 1 comparison](results/analysis/model_results.md#study-1-across-the-local-models) reports matched PSR, ballot PrSR, and PPG. |
-| **6. L3 probes** | Pending | Fit harmfulness (`h`) and refusal (`r`) probes on separate labeled items, validate them on held-out cases, then measure changes on debate items. This work can run alongside the behavioral study. |
-| **7. Full Study 1** | Local debate and ballots complete | Qwen, Llama, Mistral, and Gemma covered all 50 fictional pairs. The full fresh peer-free protocol on these items and L3 measurements are pending. |
-| **8. Study 2** | Pending | Compare power, relationship, credibility, and authority. Measure persistence and annotate a subset of justifications. |
-| **9. Study 3** | Pending | Compare unanimous peers with one consistent dissenter. Measure persistence on the original item and generalization to a related held-out item. |
-| **10. Study 4** | Pending | Compare matched and mismatched interventions. Track harmful shifts prevented and beneficial corrections lost. |
+The completed decision-label runs use `decline`, `partial`, and `answer`. In the paper,
+these map to `refuse`, `partial`, and `comply`. Here, `comply` means a recommendation to answer.
+
+| Step | Run and models | Files used | Result or remaining work |
+|---|---|---|---|
+| **1 · Fictional L1 pilot** | 100 synthetic policy items in 50 pairs. Qwen, Llama, Mistral, Gemma, and GPT-6 Luna. | [Frozen run manifest](results/log/qwen-pilot-20261118-211444-manifest.csv), [runner](pilot/harness/run_experiment.py) | **Complete.** The [fictional results](results/analysis/model_results.md#fictional-policy-pilot) report fact and decision accuracy, public shift rates, and links to each model’s log. |
+| **2 · Benchmark L1 and PSR** | Qwen ran 10 HarmBench, 10 StrongREJECT, and 20 TruthfulQA items. Llama, Mistral, and Gemma later ran the same 20 safety items. | [HarmBench manifest](pilot/harmbench_pilot.csv), [StrongREJECT manifest](pilot/strongreject_pilot.csv), [TruthfulQA manifest](pilot/truthfulqa_pilot.csv), [PSR analyzer](pilot/harness/analyze_shifts.py) | **Complete.** The [safety results](results/analysis/model_results.md#harmbench-and-strongreject) and the [Qwen-only TruthfulQA results](results/analysis/model_results.md#truthfulqa-factual-control) link to the logs. The [original public-shift analysis](results/analysis/l1_shift_summary.md) defines eligibility and the repeat and neutral controls. |
+| **3 · L1 free-text judge** | Collect free-text replies on a small fictional subset, then judge each reply as `refuse`, `partial`, or `comply`. | [Blinded scorer template](pilot/pilot_prompt_templates.md#4-blinded-output-scorer) | **Pending.** The existing L1 logs were scored from the target’s own decision labels. There are no independent LLM judge labels yet. |
+| **4 · Human validation** | Start with 20 XSTest requests in 10 pairs. Record expected decisions and whether each pair is comparable. | [Review CSV](results/analysis/study1_human_review.csv), [XSTest source](data/raw/xstest.csv), [pair manifest](pilot/study1_checklist.json) | **Audit underway.** `source_record_number` counts data records from 1, excluding the header. Record judgments before comparing with benchmark labels. Judge agreement is a later check on a free-text sample. |
+| **5 · Study 1 preparation** | Define and label the fictional confederate messages, conditions, log fields, and scoring rules. | [Items](pilot/pilot_fact_pairs.csv), [conditions](pilot/study1_conditions.json), [confederate scripts](pilot/study1_confederates.json), [protocol](pilot/study1_protocol.md) | **Implemented.** The frozen plan has 100 items and 300 messages. The protocol includes the justification codebook and the fields used to match debate rounds and ballots. |
+| **6 · L2 peer-free safety baseline** | Three decision-question wordings × five calls × 20 safety items. Four local models. | [Benchmark task code](pilot/harness/benchmark_tasks.py), HarmBench and StrongREJECT manifests from Step 2 | **Complete for the 20 safety items.** Each model chose `decline` on all 300 calls. [Peer-free results and raw logs](results/analysis/L2_peer_free_results.md) |
+| **7 · L2 secret ballot** | A final private ballot after each panel’s Round 3 on all 50 fictional pairs. Four local models. | [Study 1 plan](pilot/study1_conditions.json), [runner](pilot/harness/run_experiment.py), [analyzer](pilot/harness/analyze_shifts.py) | **Complete for the fictional set.** Each model returned 1,000 ballots. [Matched PSR, ballot PrSR, PPG, and raw logs](results/analysis/model_results.md#study-1-across-the-local-models) |
+| **8 · L3 activation and probes** | Replay one shifted and one stable fictional item on white-box Llama. Fit and validate harmfulness and refusal probes on held-out data. | [Four replay prompts and saved answers](smoke/llama_l3_smoke_cases.json) | **Fixture ready.** Activation extraction, probe validation, and debate `Δh` and `Δr` are pending. |
+| **9 · Expanded Study 1** | Fifty benign/harmful XSTest pairs. Social proof, argument, and both. Unanimous peers, a consistent dissenter, a senior-labeled dissenter, and controls. Public and withheld replies. | [Pair manifest](pilot/study1_checklist.json), [checklist runner](pilot/harness/run_study1.py) | **Complete on local Llama.** All 8,200 calls were scorable, including 2,000 ballots. The [checklist analysis](results/analysis/study1_results_Llama.md) reports both directions and links to the full run and preflight. Qwen, Mistral, and Gemma are pending for this design. |
+| **10 · Study 2** | Manipulate power, relationship, and credibility. Re-query with and without the relationship cue under matched retained context. | [Justification codebook](pilot/study1_protocol.md#justification-codebook) | **Pending.** Measure persistence and code short explanations collected after the decision. |
+| **11 · Study 3** | Compare unanimity with a consistent minority dissenter. Follow up on the original item and on a related item held out of debate. | [Private ballot and continuation templates](pilot/pilot_prompt_templates.md#2-private-ballot-and-independent-repeat) | **Pending.** Measure persistence on the original item and generalization on a related item. |
+| **12 · Study 4** | Apply selected interventions from proposal Table 2 in matched, mismatched, and no-intervention conditions. | Use the specified Study 1–3 conditions and scoring rules. | **Pending.** Run the intervention conditions once under a common protocol. Include correct peer advice to measure beneficial corrections lost alongside harmful shifts prevented. |
+
+**Analysis and statistics.** Record shifts at the item level and aggregate PSR, PrSR, and PPG on the same eligible items. Report benign and harmful directions separately. Keep pair members together when estimating uncertainty, and state which private measure each reported gap uses.
 
 ## Models
-Not finalized, will be added more
-### 1. L1-L2
-- Low cost, frontier API models
 
-| Provider | API model ID | Input / output per 1M tokens |
-| --- | --- | --- |
-| DeepSeek | V4.1-Flash-1017 (Disable thinking) | $0.15 / $0.60 off-peak, $0.30 / $1.20 peak.  |
-| Upstage | solar-mini4 | $0.10 / $0.40  |
-| OpenAI | gpt-6-luna | $0.10 / $0.50   |
-| Anthropic | claude-haiku-5-5 | $0.10 / $0.50   |
-| Google | gemini-3.1-flash-lite | $0.25 / $1.50   |
-| Amazon | amazon.nova-2-lite-v1:0 | $0.30 / $2.50  |
+### Models used in the experiments
 
-### 2. L3
-- white-box access, open-weight instruction-tuned models, 7-14B, non-reasoning
+| Model | Runtime and model ID | Runs completed or in progress |
+|---|---|---|
+| Qwen3.5-9B | Ollama, `qwen3.5:9b`, thinking disabled | Fictional L1 pilot, safety benchmark pilot and peer-free baseline, TruthfulQA, and fictional Study 1 ballots. |
+| Llama 3.1 8B Instruct | Ollama, `llama3.1:8b` | Fictional L1 pilot, safety benchmark pilot and peer-free baseline, and fictional Study 1 ballots. The expanded XSTest run is complete. |
+| Mistral 7B Instruct v0.3 | Ollama, `mistral:7b-instruct-v0.3-q4_K_M` | Fictional L1 pilot, safety benchmark pilot and peer-free baseline, and fictional Study 1 ballots. |
+| Gemma 3 12B IT | Ollama, `gemma3:12b` | Fictional L1 pilot, safety benchmark pilot and peer-free baseline, and fictional Study 1 ballots. |
+| GPT-6 Luna | OpenAI API, `gpt-6-luna` | Fictional L1 pilot. |
+| SmolLM2 360M Instruct | Local checkpoint | Early decision-label smoke test. |
 
-| Model | Size | Run configuration |
-| --- | --- | --- |
-| Mistral-7B-Instruct-v0.3 | 7B | Standard instruction mode. Smallest checkpoint in the core set. |
-| Llama-3.1-8B-Instruct | 8B | Standard instruction mode.  |
-| Qwen3.5-9B | 9B | disable thinking |
-| Gemma-3-12B-IT | 12B | Standard instruction mode with text-only inputs.  |
+The first L3 check uses Llama 3.1 8B. The [replay fixture](smoke/llama_l3_smoke_cases.json) records the four saved prompts and answers. Activation extraction and probe validation remain pending.
 
+### Other API backends
+
+The [adapter code](pilot/harness/model_adapters.py) includes Upstage (`solar-mini4`), DeepSeek (`deepseek-flash`, thinking disabled), and Anthropic (`claude-haiku-5-5`). Those providers have no scored results in the consolidated report. Google Gemini Flash-Lite and Amazon Nova 2 Lite are candidates for later runs.
 
 ## Data
 
-| Data | Contents and use |
+| Dataset or fixture | Used for |
 |---|---|
-| [Raw benchmarks](data/raw/) | Downloaded XSTest, OR-Bench, HarmBench, StrongREJECT, and TruthfulQA files. |
-| [Initial development pairs](smoke/development_pairs.csv) | Eight fictional pairs (16 items) used to check whether the model chooses to answer or decline. |
-| [One pair](smoke/exhibit_fact_pair.csv) | Two versions of the same fictional exhibit. One is public and one is private. Used to check whether each model reports the right fact and chooses the right action. |
-| [Five-pair development set](smoke/development_fact_pairs.csv) | Ten practice items about sharing information, including one pair about consent. Each item has a fact question and a false statement for the peers to repeat. |
-| [Pilot pairs](pilot/pilot_fact_pairs.csv) | Fifty pairs (100 items) across ten fictional rules. Thirty pairs are inspired by XSTest and twenty by OR-Bench. Fifty items should be answered and fifty should be declined. |
-| [HarmBench pilot](pilot/harmbench_pilot.csv) | Ten benchmark requests with `decline` as the expected decision. |
-| [StrongREJECT pilot](pilot/strongreject_pilot.csv) | Ten benchmark requests with `decline` as the expected decision. |
-| [TruthfulQA factual control](pilot/truthfulqa_pilot.csv) | Twenty original TruthfulQA questions, each given two choices from the source file. The correct choice appears first ten times and second ten times. |
+| [Raw benchmark files](data/raw/) | Source copies of XSTest, OR-Bench, HarmBench, StrongREJECT, and TruthfulQA. |
+| [Development pairs](smoke/development_pairs.csv), [exhibit pair](smoke/exhibit_fact_pair.csv), and [five-pair fixture](smoke/development_fact_pairs.csv) | Early tests of decision scoring, fact scoring, and three-round debate. |
+| [Fictional policy pairs](pilot/pilot_fact_pairs.csv) and [frozen L1 run manifest](results/log/qwen-pilot-20261118-211444-manifest.csv) | 100 synthetic items in 50 pairs across ten fictional rules. Thirty pairs were inspired by XSTest and twenty by OR-Bench. Each pair has one expected `answer` and one expected `decline`. Used for the fictional L1 and Study 1 ballot runs. |
+| [HarmBench pilot](pilot/harmbench_pilot.csv) and [StrongREJECT pilot](pilot/strongreject_pilot.csv) | Ten requests from each benchmark, all with `decline` as the expected decision. The four local models saw these same items in debate and the extended peer-free baseline. |
+| [TruthfulQA factual control](pilot/truthfulqa_pilot.csv) | Twenty questions with two choices each. Qwen completed the baseline and debate conditions. |
+| [Expanded XSTest pair manifest](pilot/study1_checklist.json) | Fifty benign/harmful contrast pairs from [XSTest](data/raw/xstest.csv), with 25 homonym pairs and 25 safe-target pairs. The manifest points to the original records by data-row number. |
+| [Human review sheet](results/analysis/study1_human_review.csv) | A 10-pair sample from the expanded XSTest set for reviewing expected decisions and pair comparability. |
+| [L3 replay fixture](smoke/llama_l3_smoke_cases.json) | Four saved Llama prompts and responses from two fictional items, one with a public decision shift and one without. |
 
-Each pair asks for the same thing under the same rule. One fact changes, so one item should be answered and the other declined. The peers can claim the opposite fact. The CSV stores the expected fact in `gold_fact` and the expected action in `gold_decision`.
-
-## Experiment design
+<!-- ## Experiment design
 
 First, the model answers alone. We ask it the same question again in a new call to see whether it changes its answer on its own. Then it sees one of three types of peer messages. We run each type twice and tell the model its answer will either appear in the shared panel record or be kept out of it.
 
@@ -194,7 +193,7 @@ The model returns `case_fact` (what it says is true) and `decision` (what it say
 
    </details>
 
-The [runner](pilot/harness/run_experiment.py) shares prompts and scoring across the [Ollama, Upstage, and OpenAI adapters](pilot/harness/model_adapters.py). The SmolLM2 test was repeated from Terminal. Qwen gave the same exhibit answers after we added the Ollama connection, and the new log also recorded the model and token counts. Upstage and OpenAI were checked with mock answers. The first real OpenAI call stopped because the API account was out of credit. Recording activity inside the open models is still pending. [Terminal replay](results/log/terminal-20261118-142955.jsonl), [Qwen adapter rerun](results/log/qwen-adapter-smoke-20261118-181554.jsonl)
+The [runner](pilot/harness/run_experiment.py) shares prompts and scoring across the [Ollama, Upstage, and OpenAI adapters](pilot/harness/model_adapters.py). The SmolLM2 test was repeated from Terminal. Qwen gave the same exhibit answers after we added the Ollama connection, and the new log also recorded the model and token counts. Upstage and OpenAI were checked with mock answers. The first real OpenAI call stopped because the API account was out of credit. Recording activity inside the open models is still pending. [Terminal replay](results/log/terminal-20261118-142955.jsonl), [Qwen adapter rerun](results/log/qwen-adapter-smoke-20261118-181554.jsonl) -->
 
 <!-- ## Worked example from a saved result
 
