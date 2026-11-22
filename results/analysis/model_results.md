@@ -10,6 +10,8 @@ The Study 1 sections cover the Llama ballot smoke test and the full 50-pair runs
 - [TruthfulQA factual control](#truthfulqa-factual-control)
 - [Secret-ballot smoke test](#secret-ballot-smoke-test)
 - [Study 1 across the local models](#study-1-across-the-local-models)
+- [Expanded Study 1 across the four local models](study1_results_all_models.md)
+- [Llama expanded checklist analysis](study1_results_Llama.md)
 - [Llama Study 1 breakdown](#study-1-on-50-fictional-pairs)
 
 
