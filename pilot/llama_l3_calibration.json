@@ -1,0 +1,472 @@
+{
+  "dataset": "data/raw/xstest.csv",
+  "dataset_sha256": "a92c530769ac25bbb903b78d6dddea69feb5ae6f7e5d2df58dac5a650ca176fe",
+  "study_manifest": "pilot/study1_checklist.json",
+  "study_manifest_sha256": "e659e78f34002b26ad9d411e94a2e09f4b8ed70d02ffb4ecda574bbdc39a74d4",
+  "model_id": "llama3.1:8b",
+  "checkpoint_sha256": "667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29",
+  "runtime": "llama.cpp b12633",
+  "layer_indices": [
+    7,
+    15,
+    23,
+    31
+  ],
+  "seed": 22,
+  "contexts": [
+    "baseline",
+    "neutral_public",
+    "answer_public",
+    "decline_public"
+  ],
+  "pairs": [
+    {
+      "pair_id": "definitions-01",
+      "family": "definitions",
+      "split": "train",
+      "benign_row": 205,
+      "harmful_row": 230
+    },
+    {
+      "pair_id": "definitions-02",
+      "family": "definitions",
+      "split": "train",
+      "benign_row": 208,
+      "harmful_row": 233
+    },
+    {
+      "pair_id": "definitions-03",
+      "family": "definitions",
+      "split": "train",
+      "benign_row": 201,
+      "harmful_row": 226
+    },
+    {
+      "pair_id": "definitions-04",
+      "family": "definitions",
+      "split": "train",
+      "benign_row": 220,
+      "harmful_row": 245
+    },
+    {
+      "pair_id": "definitions-05",
+      "family": "definitions",
+      "split": "train",
+      "benign_row": 215,
+      "harmful_row": 240
+    },
+    {
+      "pair_id": "definitions-06",
+      "family": "definitions",
+      "split": "train",
+      "benign_row": 206,
+      "harmful_row": 231
+    },
+    {
+      "pair_id": "definitions-07",
+      "family": "definitions",
+      "split": "train",
+      "benign_row": 204,
+      "harmful_row": 229
+    },
+    {
+      "pair_id": "definitions-08",
+      "family": "definitions",
+      "split": "train",
+      "benign_row": 212,
+      "harmful_row": 237
+    },
+    {
+      "pair_id": "definitions-09",
+      "family": "definitions",
+      "split": "dev",
+      "benign_row": 203,
+      "harmful_row": 228
+    },
+    {
+      "pair_id": "definitions-10",
+      "family": "definitions",
+      "split": "dev",
+      "benign_row": 224,
+      "harmful_row": 249
+    },
+    {
+      "pair_id": "definitions-11",
+      "family": "definitions",
+      "split": "dev",
+      "benign_row": 225,
+      "harmful_row": 250
+    },
+    {
+      "pair_id": "definitions-12",
+      "family": "definitions",
+      "split": "dev",
+      "benign_row": 223,
+      "harmful_row": 248
+    },
+    {
+      "pair_id": "definitions-13",
+      "family": "definitions",
+      "split": "heldout",
+      "benign_row": 222,
+      "harmful_row": 247
+    },
+    {
+      "pair_id": "definitions-14",
+      "family": "definitions",
+      "split": "heldout",
+      "benign_row": 210,
+      "harmful_row": 235
+    },
+    {
+      "pair_id": "definitions-15",
+      "family": "definitions",
+      "split": "heldout",
+      "benign_row": 217,
+      "harmful_row": 242
+    },
+    {
+      "pair_id": "definitions-16",
+      "family": "definitions",
+      "split": "heldout",
+      "benign_row": 209,
+      "harmful_row": 234
+    },
+    {
+      "pair_id": "figurative_language-01",
+      "family": "figurative_language",
+      "split": "train",
+      "benign_row": 72,
+      "harmful_row": 97
+    },
+    {
+      "pair_id": "figurative_language-02",
+      "family": "figurative_language",
+      "split": "train",
+      "benign_row": 74,
+      "harmful_row": 99
+    },
+    {
+      "pair_id": "figurative_language-03",
+      "family": "figurative_language",
+      "split": "train",
+      "benign_row": 64,
+      "harmful_row": 89
+    },
+    {
+      "pair_id": "figurative_language-04",
+      "family": "figurative_language",
+      "split": "train",
+      "benign_row": 52,
+      "harmful_row": 77
+    },
+    {
+      "pair_id": "figurative_language-05",
+      "family": "figurative_language",
+      "split": "train",
+      "benign_row": 69,
+      "harmful_row": 94
+    },
+    {
+      "pair_id": "figurative_language-06",
+      "family": "figurative_language",
+      "split": "train",
+      "benign_row": 51,
+      "harmful_row": 76
+    },
+    {
+      "pair_id": "figurative_language-07",
+      "family": "figurative_language",
+      "split": "train",
+      "benign_row": 71,
+      "harmful_row": 96
+    },
+    {
+      "pair_id": "figurative_language-08",
+      "family": "figurative_language",
+      "split": "train",
+      "benign_row": 59,
+      "harmful_row": 84
+    },
+    {
+      "pair_id": "figurative_language-09",
+      "family": "figurative_language",
+      "split": "dev",
+      "benign_row": 60,
+      "harmful_row": 85
+    },
+    {
+      "pair_id": "figurative_language-10",
+      "family": "figurative_language",
+      "split": "dev",
+      "benign_row": 73,
+      "harmful_row": 98
+    },
+    {
+      "pair_id": "figurative_language-11",
+      "family": "figurative_language",
+      "split": "dev",
+      "benign_row": 54,
+      "harmful_row": 79
+    },
+    {
+      "pair_id": "figurative_language-12",
+      "family": "figurative_language",
+      "split": "dev",
+      "benign_row": 53,
+      "harmful_row": 78
+    },
+    {
+      "pair_id": "figurative_language-13",
+      "family": "figurative_language",
+      "split": "heldout",
+      "benign_row": 75,
+      "harmful_row": 100
+    },
+    {
+      "pair_id": "figurative_language-14",
+      "family": "figurative_language",
+      "split": "heldout",
+      "benign_row": 67,
+      "harmful_row": 92
+    },
+    {
+      "pair_id": "figurative_language-15",
+      "family": "figurative_language",
+      "split": "heldout",
+      "benign_row": 68,
+      "harmful_row": 93
+    },
+    {
+      "pair_id": "figurative_language-16",
+      "family": "figurative_language",
+      "split": "heldout",
+      "benign_row": 62,
+      "harmful_row": 87
+    },
+    {
+      "pair_id": "historical_events-01",
+      "family": "historical_events",
+      "split": "train",
+      "benign_row": 327,
+      "harmful_row": 352
+    },
+    {
+      "pair_id": "historical_events-02",
+      "family": "historical_events",
+      "split": "train",
+      "benign_row": 348,
+      "harmful_row": 373
+    },
+    {
+      "pair_id": "historical_events-03",
+      "family": "historical_events",
+      "split": "train",
+      "benign_row": 336,
+      "harmful_row": 361
+    },
+    {
+      "pair_id": "historical_events-04",
+      "family": "historical_events",
+      "split": "train",
+      "benign_row": 345,
+      "harmful_row": 370
+    },
+    {
+      "pair_id": "historical_events-05",
+      "family": "historical_events",
+      "split": "train",
+      "benign_row": 349,
+      "harmful_row": 374
+    },
+    {
+      "pair_id": "historical_events-06",
+      "family": "historical_events",
+      "split": "train",
+      "benign_row": 334,
+      "harmful_row": 359
+    },
+    {
+      "pair_id": "historical_events-07",
+      "family": "historical_events",
+      "split": "train",
+      "benign_row": 331,
+      "harmful_row": 356
+    },
+    {
+      "pair_id": "historical_events-08",
+      "family": "historical_events",
+      "split": "train",
+      "benign_row": 338,
+      "harmful_row": 363
+    },
+    {
+      "pair_id": "historical_events-09",
+      "family": "historical_events",
+      "split": "dev",
+      "benign_row": 335,
+      "harmful_row": 360
+    },
+    {
+      "pair_id": "historical_events-10",
+      "family": "historical_events",
+      "split": "dev",
+      "benign_row": 330,
+      "harmful_row": 355
+    },
+    {
+      "pair_id": "historical_events-11",
+      "family": "historical_events",
+      "split": "dev",
+      "benign_row": 341,
+      "harmful_row": 366
+    },
+    {
+      "pair_id": "historical_events-12",
+      "family": "historical_events",
+      "split": "dev",
+      "benign_row": 339,
+      "harmful_row": 364
+    },
+    {
+      "pair_id": "historical_events-13",
+      "family": "historical_events",
+      "split": "heldout",
+      "benign_row": 340,
+      "harmful_row": 365
+    },
+    {
+      "pair_id": "historical_events-14",
+      "family": "historical_events",
+      "split": "heldout",
+      "benign_row": 346,
+      "harmful_row": 371
+    },
+    {
+      "pair_id": "historical_events-15",
+      "family": "historical_events",
+      "split": "heldout",
+      "benign_row": 328,
+      "harmful_row": 353
+    },
+    {
+      "pair_id": "historical_events-16",
+      "family": "historical_events",
+      "split": "heldout",
+      "benign_row": 332,
+      "harmful_row": 357
+    },
+    {
+      "pair_id": "privacy_fictional-01",
+      "family": "privacy_fictional",
+      "split": "train",
+      "benign_row": 402,
+      "harmful_row": 427
+    },
+    {
+      "pair_id": "privacy_fictional-02",
+      "family": "privacy_fictional",
+      "split": "train",
+      "benign_row": 411,
+      "harmful_row": 436
+    },
+    {
+      "pair_id": "privacy_fictional-03",
+      "family": "privacy_fictional",
+      "split": "train",
+      "benign_row": 418,
+      "harmful_row": 443
+    },
+    {
+      "pair_id": "privacy_fictional-04",
+      "family": "privacy_fictional",
+      "split": "train",
+      "benign_row": 425,
+      "harmful_row": 450
+    },
+    {
+      "pair_id": "privacy_fictional-05",
+      "family": "privacy_fictional",
+      "split": "train",
+      "benign_row": 414,
+      "harmful_row": 439
+    },
+    {
+      "pair_id": "privacy_fictional-06",
+      "family": "privacy_fictional",
+      "split": "train",
+      "benign_row": 409,
+      "harmful_row": 434
+    },
+    {
+      "pair_id": "privacy_fictional-07",
+      "family": "privacy_fictional",
+      "split": "train",
+      "benign_row": 417,
+      "harmful_row": 442
+    },
+    {
+      "pair_id": "privacy_fictional-08",
+      "family": "privacy_fictional",
+      "split": "train",
+      "benign_row": 410,
+      "harmful_row": 435
+    },
+    {
+      "pair_id": "privacy_fictional-09",
+      "family": "privacy_fictional",
+      "split": "dev",
+      "benign_row": 419,
+      "harmful_row": 444
+    },
+    {
+      "pair_id": "privacy_fictional-10",
+      "family": "privacy_fictional",
+      "split": "dev",
+      "benign_row": 421,
+      "harmful_row": 446
+    },
+    {
+      "pair_id": "privacy_fictional-11",
+      "family": "privacy_fictional",
+      "split": "dev",
+      "benign_row": 407,
+      "harmful_row": 432
+    },
+    {
+      "pair_id": "privacy_fictional-12",
+      "family": "privacy_fictional",
+      "split": "dev",
+      "benign_row": 424,
+      "harmful_row": 449
+    },
+    {
+      "pair_id": "privacy_fictional-13",
+      "family": "privacy_fictional",
+      "split": "heldout",
+      "benign_row": 403,
+      "harmful_row": 428
+    },
+    {
+      "pair_id": "privacy_fictional-14",
+      "family": "privacy_fictional",
+      "split": "heldout",
+      "benign_row": 405,
+      "harmful_row": 430
+    },
+    {
+      "pair_id": "privacy_fictional-15",
+      "family": "privacy_fictional",
+      "split": "heldout",
+      "benign_row": 423,
+      "harmful_row": 448
+    },
+    {
+      "pair_id": "privacy_fictional-16",
+      "family": "privacy_fictional",
+      "split": "heldout",
+      "benign_row": 406,
+      "harmful_row": 431
+    }
+  ]
+}
