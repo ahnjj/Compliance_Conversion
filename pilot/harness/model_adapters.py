@@ -47,6 +47,8 @@ class OllamaAdapter:
         default_model,
         "mistral:7b-instruct-v0.3-q4_K_M",
         "llama3.1:8b",
+        "llama3:8b-instruct-q4_K_M",
+        "qwen3:8b",
         "gemma3:12b",
     )
 
@@ -61,7 +63,7 @@ class OllamaAdapter:
             "format": schema,
             "options": {"temperature": 0, "num_ctx": 2048, "num_predict": 128},
         }
-        if self.model_id == self.default_model:
+        if self.model_id in (self.default_model, "qwen3:8b"):
             payload["think"] = False
         body = post_json("http://127.0.0.1:11434/api/chat", payload)
         try:
