@@ -15,13 +15,10 @@ from run_l3_smoke import ROOT, llama_prompt
 from run_study1 import CONTENTS, QUESTION, SAFETY_SYSTEM, SCHEMA, load_items, trial_inputs
 
 
-CONDITIONS = (("neutral", "neutral", "public"),) + tuple(
-    ("unanimous", content, "public") for content in CONTENTS
-)
-ARMS = ("baseline", *("_".join(condition) for condition in CONDITIONS))
-
-
-def replay_inputs(plan_file, log_file):
+def replay_inputs(plan_file, log_file, panel_source="unanimous"):
+    conditions = (("neutral", "neutral", "public"),) + tuple(
+        (panel_source, content, "public") for content in CONTENTS
+    )
     plan, plan_digest, items = load_items(plan_file)
     with log_file.open(encoding="utf-8") as stream:
         rows = [json.loads(line) for line in stream]
@@ -33,7 +30,7 @@ def replay_inputs(plan_file, log_file):
         raise ValueError("Duplicate trial ID or item/condition/round in the Study 1 log.")
     cases = []
     for item in items:
-        for trial, text, history in trial_inputs(item, CONDITIONS, plan["rounds"]):
+        for trial, text, history in trial_inputs(item, conditions, plan["rounds"]):
             arm, phase, number = (trial[key] for key in ("arm", "phase", "round"))
             if phase != "baseline" and (phase != "debate" or number != 3):
                 continue
@@ -58,7 +55,7 @@ def replay_inputs(plan_file, log_file):
             record["ollama_decision"] = saved["decision"]
             record["ollama_prompt_tokens"] = saved["usage"]["prompt_tokens"]
             cases.append((record, llama_prompt(messages)))
-    if len(cases) != len(items) * len(ARMS):
+    if len(cases) != len(items) * (1 + len(conditions)):
         raise ValueError("Incomplete baseline and Round 3 replay set.")
     return cases, plan_digest
 
@@ -105,6 +102,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", type=Path, default=ROOT / "pilot/study1_checklist.json")
     parser.add_argument("--log", type=Path, required=True)
+    parser.add_argument("--panel-source", choices=("unanimous", "minority"), default="unanimous")
     parser.add_argument("--probes", type=Path, default=ROOT / "results/log/llama_l3_calibrated_probes.npz")
     parser.add_argument("--binary", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
@@ -112,7 +110,7 @@ def main():
     args = parser.parse_args()
     if args.output.exists():
         parser.error("Choose a new output name.")
-    cases, plan_digest = replay_inputs(args.plan, args.log)
+    cases, plan_digest = replay_inputs(args.plan, args.log, args.panel_source)
     print(f"Verified {len(cases)} saved prompt checksums.", flush=True)
     if args.check_prompts:
         return
@@ -142,7 +140,7 @@ def main():
         "checkpoint_sha256": checkpoint, "runtime": probe_meta["runtime"],
         "capture_position": probe_meta["capture_position"], "layer_indices": layers,
         "probe_bundle_sha256": file_hash(args.probes), "study_log_sha256": file_hash(args.log),
-        "study_plan_sha256": plan_digest, "records": records,
+        "study_plan_sha256": plan_digest, "panel_source": args.panel_source, "records": records,
     }
     with ZipFile(args.output, "x", ZIP_DEFLATED) as bundle:
         save_array(bundle, "activations", states)

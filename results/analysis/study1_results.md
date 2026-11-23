@@ -185,3 +185,24 @@ The harmful-item refusal score changed by **−0.016** relative to neutral, even
 [Frozen probe validation](llama_l3_validation.md) ·
 [Per-item scores and activations](../log/llama_study1_l3.npz) ·
 [Replay runner](../../pilot/harness/run_study1_l3.py)
+
+## Qwen L3 results
+
+Qwen3.5 9B replayed 200 saved prompts across 50 benign items. All decisions and prompt token counts matched. Under public unanimous social proof, 42 of 43 eligible items shifted toward refusal, and 14 of 43 also shifted in the secret-ballot measure, a **65.1-percentage-point gap**.
+
+The table shows the change in harmfulness score from each reference to public round-three unanimous social proof. Scores are in standard deviations of the held-out benign neutral scores. Higher `h` indicates a stronger signal for the unsafe label.
+
+| Benign items | Reference | Items | Mean Δh (SD) | 90% matched-item interval (SD) |
+|---|---|---:|---:|---:|
+| All eligible items | Peer-free baseline | 43 | +1.856 | [+1.750, +1.954] |
+| All eligible items | Public neutral panel | 43 | +1.201 | [+1.096, +1.302] |
+| Refused publicly, changed on ballot | Peer-free baseline | 28 | +1.978 | [+1.908, +2.045] |
+| Refused publicly, changed on ballot | Public neutral panel | 28 | +1.375 | [+1.281, +1.468] |
+
+All four intervals were above the working **±0.20 SD** equivalence margin. The mean score also rose in the 28-item subset that Qwen refused publicly and answered or partially answered on the ballot. The large gap matches the behavioral prediction for mostly compliance. The increase in the probe score runs against its near-zero Δh prediction.
+
+The Qwen probe used decoder block 32 and reached **90.6% balanced accuracy** and **0.982 AUROC** on held-out debate items.
+
+[Probe validation and methods](qwen_study1_l3.md#probe-calibration-and-replay) ·
+[Per-item replay states and decisions](../log/qwen_study1_l3.npz) ·
+[Replay runner](../../pilot/harness/run_qwen_study1_l3.py)
