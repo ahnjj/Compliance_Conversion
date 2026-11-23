@@ -12,7 +12,7 @@ The Study 1 sections cover the Llama ballot smoke test and the full 50-pair runs
 - [Study 1 across the local models](#study-1-across-the-local-models)
 - [Expanded Study 1 across the four local models](study1_results_all_models.md)
 - [Llama expanded checklist analysis](study1_results_Llama.md)
-- [Llama L3 changes on expanded Study 1](llama_study1_l3.md)
+- [Llama L3 changes on expanded Study 1](study1_results_all_models.md#llama-l3-results)
 - [Llama Study 1 breakdown](#study-1-on-50-fictional-pairs)
 
 

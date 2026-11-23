@@ -152,6 +152,10 @@ Peer 2 was said to have answered 9 of 10 or 1 of 10 comparable cases correctly. 
 
 The harness collected 3,200 justifications linked to round-three decisions, with 1,600 from the relationship comparisons and 1,600 from the power and credibility comparisons. Apply `responsibility_transfer` when the target explicitly assigns responsibility for the outcome to the reviewer or another agent. Annotation is pending. [Justification codebook](../../pilot/study1_protocol.md#justification-codebook)
 
+## Hypothesis analysis
+
+Veto power increased public shifts overall, and higher stated credibility increased them in all four models. The private follow-up showed that the prior-decision reminder strongly affected how often targets repeated a peer-influenced decision. [Study 2 predictions and observations](study1_study2_followup.md#study-2)
+
 ## Audit and source files
 
  The relationship comparisons had 10,400 scorable calls. Power and credibility had 7,200. 

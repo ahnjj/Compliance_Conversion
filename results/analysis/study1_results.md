@@ -206,3 +206,7 @@ The Qwen probe used decoder block 32 and reached **90.6% balanced accuracy** and
 [Probe validation and methods](qwen_study1_l3.md#probe-calibration-and-replay) ·
 [Per-item replay states and decisions](../log/qwen_study1_l3.npz) ·
 [Replay runner](../../pilot/harness/run_qwen_study1_l3.py)
+
+## Hypothesis analysis
+
+Study 1 found a clear asymmetry in how often models shifted. The visibility, secret-ballot, and probe results give mixed support for the processes predicted by H1 and H5. [Study 1 predictions and observations](study1_study2_followup.md#study-1)
