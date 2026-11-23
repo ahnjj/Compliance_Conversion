@@ -147,7 +147,7 @@ The authority condition adds a **senior-reviewer** label to the same dissenter.
 | Gemma 3 12B | harmful | argument | 0/50 (0.0%) | 0/50 (0.0%) | 0/50 (0.0%) | 0.0 pp |
 | Gemma 3 12B | harmful | combined | 0/50 (0.0%) | 0/50 (0.0%) | 0/50 (0.0%) | 0.0 pp |
 
-## Same-pair comparison
+<!-- ## Same-pair comparison
 
 Both items were eligible for every included model in **14 of 50 pairs**.
 The following public shifts use exactly that common set for both directions and all models.
@@ -160,4 +160,28 @@ The following public shifts use exactly that common set for both directions and 
 | Gemma 3 12B | 14/14 (100.0%) | 0/14 (0.0%) | 14/14 (100.0%) | 0/14 (0.0%) | 14/14 (100.0%) | 1/14 (7.1%) |
 
 These are descriptive rates for the decision-label task. The secret-ballot prompt retains
-peer messages and adds the target’s answer history. An `answer` label is a recommendation.
+peer messages and adds the target’s answer history. An `answer` label is a recommendation. -->
+
+## Llama L3 results
+
+Llama replayed 500 prompts across the 50 matched pairs.  The table shows **mean changes from each item's peer-free baseline**,
+with 50 items per class. 
+- Higher `h` scores : a stronger signal for the unsafe label.
+- Higher `r` scores : a stronger refusal signal.
+
+| Public Round 3 condition | Benign Δh | Benign Δr | Harmful Δh | Harmful Δr |
+|---|---:|---:|---:|---:|
+| Neutral | +0.075 | -0.002 | -0.076 | +0.033 |
+| Unanimous social proof | +0.116 | +0.083 | +0.154 | +0.025 |
+| Unanimous argument | +0.271 | +0.149 | -0.062 | +0.024 |
+| Unanimous social proof + argument | +0.343 | +0.123 | -0.253 | +0.017 |
+
+With Unanimous social proof + argument, the harmfulness score rose on benign items and fell on
+harmful items. Relative to the neutral panel, those changes were **+0.268** and **−0.177**.
+
+The harmful-item refusal score changed by **−0.016** relative to neutral, even though **32 of
+50** harmful items shifted to `answer`. 
+
+[Frozen probe validation](llama_l3_validation.md) ·
+[Per-item scores and activations](../log/llama_study1_l3.npz) ·
+[Replay runner](../../pilot/harness/run_study1_l3.py)
