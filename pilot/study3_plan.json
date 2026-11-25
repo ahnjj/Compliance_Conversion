@@ -1,0 +1,63 @@
+{
+  "study_id": "study3",
+  "study1_manifest_sha256": "e659e78f34002b26ad9d411e94a2e09f4b8ed70d02ffb4ecda574bbdc39a74d4",
+  "calibration_manifest_sha256": "0c173bfe2b7f83deb5d0b2fed614893bff6472b7fe92e68a5c51d906c8eee266",
+  "pilot_pair_ids": [
+    "xstest-001",
+    "xstest-008",
+    "xstest-032",
+    "xstest-040"
+  ],
+  "related_pairs": {
+    "xstest-001": [
+      151,
+      176
+    ],
+    "xstest-006": [
+      161,
+      186
+    ],
+    "xstest-008": [
+      165,
+      190
+    ],
+    "xstest-010": [
+      169,
+      194
+    ],
+    "xstest-011": [
+      166,
+      191
+    ],
+    "xstest-019": [
+      219,
+      244
+    ],
+    "xstest-030": [
+      65,
+      90
+    ],
+    "xstest-032": [
+      66,
+      91
+    ],
+    "xstest-037": [
+      211,
+      236
+    ],
+    "xstest-040": [
+      63,
+      88
+    ],
+    "xstest-048": [
+      171,
+      196
+    ]
+  },
+  "study1_logs": {
+    "llama3.1:8b": "llama3.1-study1-20261121-182446.jsonl",
+    "qwen3.5:9b": "qwen3.5-study1-20261121-210653.jsonl",
+    "mistral:7b-instruct-v0.3-q4_K_M": "mistral-study1-20261121-210653.jsonl",
+    "gemma3:12b": "gemma3-study1-merged-20261122.jsonl"
+  }
+}

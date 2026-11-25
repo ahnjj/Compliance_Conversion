@@ -55,7 +55,7 @@ class OllamaAdapter:
     def __init__(self, model_id=default_model):
         self.model_id = model_id
 
-    def generate(self, messages, schema):
+    def generate(self, messages, schema, *, options=None):
         payload = {
             "model": self.model_id,
             "messages": messages,
@@ -63,6 +63,8 @@ class OllamaAdapter:
             "format": schema,
             "options": {"temperature": 0, "num_ctx": 2048, "num_predict": 128},
         }
+        if options is not None:
+            payload["options"].update(options)
         if self.model_id in (self.default_model, "qwen3:8b"):
             payload["think"] = False
         body = post_json("http://127.0.0.1:11434/api/chat", payload)
